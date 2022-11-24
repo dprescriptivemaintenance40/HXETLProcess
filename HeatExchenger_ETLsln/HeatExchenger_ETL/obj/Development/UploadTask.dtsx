@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{149F8697-2362-483C-A019-B94A46B3A8BF}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{2CA8C7BC-3FB5-4D51-ACF0-CBAF02016604}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -256,7 +256,7 @@
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCArea estimate of the heat exchanger]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCDate]"
-                      cachedDataType="dbDate"
+                      cachedDataType="date"
                       cachedName="DCDate"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]" />
@@ -863,7 +863,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
-                      dataType="dbDate"
+                      dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
@@ -1307,7 +1307,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[DCDate]"
-                      cachedDataType="dbDate"
+                      cachedDataType="date"
                       cachedName="DCDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -2072,7 +2072,7 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,55"
+          PanelSize="214,55"
           Size="214,98"
           Id="Package\Foreach Loop Container"
           TopLeft="63,137" />
@@ -2141,17 +2141,55 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="115,128" />
-        <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="231,233" />
         <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="31,21" />
+        <NodeLayout
           Size="179,42"
           Id="Package\Data Flow Task\ADO NET Destination"
           TopLeft="404,335" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="115,128" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="106.5,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.5,65"
+              Start="0,0"
+              End="86.5,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="82.5,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.5,32.5"
+                    Point2="86.5,32.5"
+                    Point3="86.5,36.5" />
+                  <mssgle:LineSegment
+                    End="86.5,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
           TopLeft="308,275">
@@ -2212,44 +2250,6 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
                     Point3="115,35.5" />
                   <mssgle:LineSegment
                     End="115,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="31,21" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="106.5,63">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86.5,65"
-              Start="0,0"
-              End="86.5,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="4,32.5" />
-                  <mssgle:LineSegment
-                    End="82.5,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="82.5,32.5"
-                    Point2="86.5,32.5"
-                    Point3="86.5,36.5" />
-                  <mssgle:LineSegment
-                    End="86.5,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
