@@ -62,7 +62,7 @@ for col in series.columns:
                 finalDf.set_index(col+'Date', inplace=True)
                 bigdata[col]=finalDf[col+"New"]
 for i, row in bigdata.iterrows():
-      if pd.isnull(row['TT1']) and pd.isnull(row['TT2']) and pd.isnull(row['TS1']) and pd.isnull(row['TS2']) and pd.isnull(row['FT1']) and pd.isnull(row['FT2']) and pd.isnull(row['PT1']) and pd.isnull(row['PT2']) and pd.isnull(row['PS1']) and pd.isnull(row['PS2']):
+      if pd.isnull(row['TT1']) and pd.isnull(row['TT2']) and pd.isnull(row['TS1']) and pd.isnull(row['TS2']) and pd.isnull(row['FT1']) and pd.isnull(row['FT2']) and pd.isnull(row['PT1']) and pd.isnull(row['PT2']) and pd.isnull(row['PS1']) and pd.isnull(row['PS2']) and pd.isnull(row['Mass']) and pd.isnull(row['SpecificHeat']) and pd.isnull(row['HTC']) and pd.isnull(row['HeatEnergy']) and pd.isnull(row['LMTD']) and pd.isnull(row['Area']) :
          row['TT1']=0
          row['TT2']=0
          row['TS1']=0
@@ -73,7 +73,13 @@ for i, row in bigdata.iterrows():
          row['PT2']=0
          row['PS1']=0
          row['PS2']=0
-      SQLCommand = "INSERT INTO HXPredictedTables(HXId,Date,TT1,TT2,TS1,TS2,FT1,FT2,PT1,PT2,PS1,PS2,Mass,SpecificHeat,HTC,HeatEnergy,LMTD,Area) VALUES('" + str(row['HXId']) + "','" + str(row['Date']) + "','" + str(row['TT1']) + "','" + str(row['TT2']) + "','" + str(row['TS1']) + "','" + str(row['TS2']) + "','" + str(row['FT1']) + "','" + str(row['FT2']) + "','" + str(row['PT1']) + "','" + str(row['PT2']) + "','" + str(row['PS1']) + "','" + str(row['PS2']) + "','" + str(row['Mass']) + "','" + str(row['SpecificHeat']) + "','" + str(row['HTC']) + "','" + str(row['HeatEnergy']) + "','" + str(row['LMTD']) + "','" + str(row['Area']) + "')"
+         row['Mass']=0
+         row['SpecificHeat']=0
+         row['HTC']=0
+         row['HeatEnergy']=0
+         row['LMTD']=0
+         row['Area']=0
+      SQLCommand = "INSERT INTO HXPredictedTables(HXId,Date,TT1,TT2,TS1,TS2,FT1,FT2,PT1,PT2,PS1,PS2,Mass,SpecificHeat,HTC,HeatEnergy,LMTD,Area) VALUES('" + str(batchId) + "','" + str(i) + "','" + str(row['TT1']) + "','" + str(row['TT2']) + "','" + str(row['TS1']) + "','" + str(row['TS2']) + "','" + str(row['FT1']) + "','" + str(row['FT2']) + "','" + str(row['PT1']) + "','" + str(row['PT2']) + "','" + str(row['PS1']) + "','" + str(row['PS2']) + "','" + str(row['Mass']) + "','" + str(row['SpecificHeat']) + "','" + str(row['HTC']) + "','" + str(row['HeatEnergy']) + "','" + str(row['LMTD']) + "','" + str(row['Area']) + "')"
       cursor.execute(SQLCommand)
 conn.commit()
 
