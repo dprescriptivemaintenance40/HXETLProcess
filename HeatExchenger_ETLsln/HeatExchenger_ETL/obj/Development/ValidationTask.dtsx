@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-6EBQLBP\bistd"
   DTS:DTSID="{B184EAE7-B518-4458-ABBA-E5D6924281BE}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="66"
-  DTS:VersionGUID="{55239C0E-0BD2-4005-B3F5-FE3FC55FE4B2}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{6D284962-B04D-4775-A494-9BABA998C841}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -96,26 +96,26 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{F3343613-8359-487B-8E0C-D30DD382BBB6}"
-          DTS:ObjectName="{F3343613-8359-487B-8E0C-D30DD382BBB6}"
+          DTS:DTSID="{5F7A2C73-3BA6-4015-970D-6935A3535769}"
+          DTS:ObjectName="{5F7A2C73-3BA6-4015-970D-6935A3535769}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FMId" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{98CF1DEE-E2EE-412E-9970-EA756E38D08D}"
-          DTS:ObjectName="{98CF1DEE-E2EE-412E-9970-EA756E38D08D}"
+          DTS:DTSID="{755F3286-1819-4622-8115-3086BC4101C3}"
+          DTS:ObjectName="{755F3286-1819-4622-8115-3086BC4101C3}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::IsProcessCompleted" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{634D6721-BD21-45C6-AD7D-7AB22D81ED69}"
-          DTS:ObjectName="{634D6721-BD21-45C6-AD7D-7AB22D81ED69}"
+          DTS:DTSID="{4D7ECF64-682A-4B27-930C-17FE40314D7D}"
+          DTS:ObjectName="{4D7ECF64-682A-4B27-930C-17FE40314D7D}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::AssetName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{69840741-068C-4A3E-AE20-22B20FF4CB1A}"
-          DTS:ObjectName="{69840741-068C-4A3E-AE20-22B20FF4CB1A}"
+          DTS:DTSID="{8BF8C04C-120F-4EC3-B3F7-2665141E3C8B}"
+          DTS:ObjectName="{8BF8C04C-120F-4EC3-B3F7-2665141E3C8B}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::HXId" />
       </DTS:ForEachVariableMappings>
@@ -811,8 +811,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Clean Data.Connections[OleDbConnection]"
-                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
+                  connectionManagerID="{2D18945F-6FAB-4067-935A-FE64A16261F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-CGG65T8.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1216,13 +1216,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(((#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHeatEnergy]} != 0) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHeatEnergy]} &gt; 8500) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHeatEnergy]} &lt; 11500)) &amp;&amp; ((#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]} != 0) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]} &gt; 55) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]} &lt; 100)) &amp;&amp; ((#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCArea]} != 0) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCArea]} &gt; 1) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCArea]} &lt; 1.5)))</property>
+                      name="Expression">((#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHeatEnergy]} != 0) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]} != 0) &amp;&amp; (#{Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCArea]} != 0))</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">(((DCHeatEnergy != 0) &amp;&amp; (DCHeatEnergy &gt; 8500) &amp;&amp; (DCHeatEnergy &lt; 11500)) &amp;&amp; ((DCLMTD != 0) &amp;&amp; (DCLMTD &gt; 55) &amp;&amp; (DCLMTD &lt; 100)) &amp;&amp; ((DCArea != 0) &amp;&amp; (DCArea &gt; 1) &amp;&amp; (DCArea &lt; 1.5)))</property>
+                      name="FriendlyExpression">((DCHeatEnergy != 0) &amp;&amp; (DCLMTD != 0) &amp;&amp; (DCArea != 0))</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1786,8 +1786,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\DC Error.Connections[OleDbConnection]"
-                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
+                  connectionManagerID="{2D18945F-6FAB-4067-935A-FE64A16261F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-CGG65T8.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2512,7 +2512,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[HXStagingTables]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2540,7 +2540,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -2549,8 +2549,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
+                  connectionManagerID="{2D18945F-6FAB-4067-935A-FE64A16261F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-CGG65T8.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2973,8 +2973,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Validation Error.Connections[OleDbConnection]"
-                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
+                  connectionManagerID="{2D18945F-6FAB-4067-935A-FE64A16261F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-CGG65T8.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3104,14 +3104,14 @@
               startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
               endId="Package\Data Flow Task\Validation Error.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
               endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
@@ -3186,16 +3186,16 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,55"
-          Size="205,98"
+          PanelSize="204.8,55.2"
+          Size="204.8,97.6"
           Id="Package\Assign Values to Variable"
           TopLeft="44,132" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
           TopLeft="67,267" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="66,47" />
         <EdgeLayout
@@ -3251,39 +3251,39 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Data Flow Task\Derived Column 1"
           TopLeft="630.714296455286,191.176473269413" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="418.5714285471,189.235294106922" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Data Flow Task\Clean Data"
           TopLeft="423.571435784807,268.411768470256" />
         <NodeLayout
-          Size="118,42"
+          Size="118.4,41.6"
           Id="Package\Data Flow Task\DC Error"
           TopLeft="177.142860159582,170.529414156316" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task\Validation Error"
           TopLeft="632.857153634636,269.176474363334" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Data Flow Task\Conditional Split"
           TopLeft="569.285723980593,95.5882366347066" />
         <NodeLayout
-          Size="127,42"
+          Size="127.2,41.6"
           Id="Package\Data Flow Task\Aggregate"
           TopLeft="374.5714285471,89.2352941069224" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="38,23" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="153,84" />
         <EdgeLayout
@@ -3316,6 +3316,28 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="492.071432165954,231.235294106922">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.176474363334"
+              Start="0,0"
+              End="0,29.676474363334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.676474363334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
           TopLeft="710.185725044961,232.776473269413">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3328,28 +3350,6 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,28.9000010939207" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="491.871432165954,230.835294106922">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.5764743633337"
-              Start="0,0"
-              End="0,30.0764743633337">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.0764743633337" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3506,6 +3506,11 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
