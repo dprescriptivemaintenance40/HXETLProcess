@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="DESKTOP-6EBQLBP.DPM1"
-  DTS:DTSID="{B4BBD799-F66B-4C23-9245-EB64920433BE}"
+  DTS:DTSID="{D2CA689A-0DEF-4E84-84F6-7F5876CB2EB3}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=DESKTOP-6EBQLBP;Initial Catalog=DPM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-HeatExchenger_ETL-{B4BBD799-F66B-4C23-9245-EB64920433BE}DESKTOP-6EBQLBP.DPM1;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=DESKTOP-6EBQLBP;Initial Catalog=DPM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-HeatExchenger_ETL-{D2CA689A-0DEF-4E84-84F6-7F5876CB2EB3}DESKTOP-6EBQLBP.DPM1;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

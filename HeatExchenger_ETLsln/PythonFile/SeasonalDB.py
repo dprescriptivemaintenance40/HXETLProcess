@@ -9,13 +9,13 @@ import numpy as np
 from datetime import date, datetime
 bigdata = pd.DataFrame()
 
-conn = odbc.connect('Driver=SQL SERVER;Server=DESKTOP-CGG65T8;Database=DPM;Integrated Security=True')
+conn = odbc.connect('Driver=SQL SERVER;Server=DESKTOP-6EBQLBP;Database=DPM;Integrated Security=True')
 
 cursor = conn.cursor()
 # batchId=1
 # AssetName="CentrifugalCompressor"
-batchId=int(sys.argv[1])
-
+#batchId=int(sys.argv[1])
+batchId=1
 query='''SELECT * FROM HXProcessedTables WHERE HXId={}'''
 series = pd.read_sql(query.format(batchId),conn, parse_dates=['Date'])
 startdate=min(series["Date"])

@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-6EBQLBP\bistd"
   DTS:DTSID="{B184EAE7-B518-4458-ABBA-E5D6924281BE}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{6E8F595C-F6B6-4CEF-8301-552FE423E0F4}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{55239C0E-0BD2-4005-B3F5-FE3FC55FE4B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -96,26 +96,26 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{4184CB61-A617-4C3F-8170-AC5B9CE7E5D1}"
-          DTS:ObjectName="{4184CB61-A617-4C3F-8170-AC5B9CE7E5D1}"
+          DTS:DTSID="{F3343613-8359-487B-8E0C-D30DD382BBB6}"
+          DTS:ObjectName="{F3343613-8359-487B-8E0C-D30DD382BBB6}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FMId" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{80FD6DA4-2E2A-421F-92AE-3E308EE38098}"
-          DTS:ObjectName="{80FD6DA4-2E2A-421F-92AE-3E308EE38098}"
+          DTS:DTSID="{98CF1DEE-E2EE-412E-9970-EA756E38D08D}"
+          DTS:ObjectName="{98CF1DEE-E2EE-412E-9970-EA756E38D08D}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::IsProcessCompleted" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{6C1CC70A-9A4E-4515-B490-F471F9CBD219}"
-          DTS:ObjectName="{6C1CC70A-9A4E-4515-B490-F471F9CBD219}"
+          DTS:DTSID="{634D6721-BD21-45C6-AD7D-7AB22D81ED69}"
+          DTS:ObjectName="{634D6721-BD21-45C6-AD7D-7AB22D81ED69}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::AssetName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{00F4AD29-66EA-4B47-9D94-2E30B2DAFD04}"
-          DTS:ObjectName="{00F4AD29-66EA-4B47-9D94-2E30B2DAFD04}"
+          DTS:DTSID="{69840741-068C-4A3E-AE20-22B20FF4CB1A}"
+          DTS:ObjectName="{69840741-068C-4A3E-AE20-22B20FF4CB1A}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::HXId" />
       </DTS:ForEachVariableMappings>
@@ -811,8 +811,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Clean Data.Connections[OleDbConnection]"
-                  connectionManagerID="{3AD51E9E-348B-40B2-8D30-D6C5F6DD49B3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLEDb]"
+                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1786,8 +1786,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\DC Error.Connections[OleDbConnection]"
-                  connectionManagerID="{3AD51E9E-348B-40B2-8D30-D6C5F6DD49B3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLEDb]"
+                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2549,8 +2549,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{3AD51E9E-348B-40B2-8D30-D6C5F6DD49B3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLEDb]"
+                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2973,8 +2973,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Validation Error.Connections[OleDbConnection]"
-                  connectionManagerID="{3AD51E9E-348B-40B2-8D30-D6C5F6DD49B3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLEDb]"
+                  connectionManagerID="{B4BBD799-F66B-4C23-9245-EB64920433BE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-6EBQLBP.DPM1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3134,7 +3134,7 @@
       <DTS:PropertyExpression
         DTS:Name="SqlStatementSource">"select F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(HX.Id,0) from
 (select Id,EquipmentId,IsProcessCompleted From [DPM].[dbo].[Asset_FailureMode]
-where IsProcessCompleted=1 AND Description=N'HXData') F
+where IsProcessCompleted=1 AND Description=N'HXINL') F
 LEFT JOIN
 (select AssetName,Id from Asset_Equipments) A
 ON (F.EquipmentId=A.Id)
@@ -3143,8 +3143,8 @@ LEFT JOIN
 ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{3AD51E9E-348B-40B2-8D30-D6C5F6DD49B3}"
-          SQLTask:SqlStatementSource="select F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(HX.Id,0) from&#xA;(select Id,EquipmentId,IsProcessCompleted From [DPM].[dbo].[Asset_FailureMode]&#xA;where IsProcessCompleted=1 AND Description=N'HXData') F&#xA;LEFT JOIN&#xA;(select AssetName,Id from Asset_Equipments) A&#xA;ON (F.EquipmentId=A.Id)&#xA;LEFT JOIN&#xA;(select * from HXParameters)HX&#xA;ON (F.Id=HX.FailureModeId)"
+          SQLTask:Connection="{B4BBD799-F66B-4C23-9245-EB64920433BE}"
+          SQLTask:SqlStatementSource="select F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(HX.Id,0) from&#xA;(select Id,EquipmentId,IsProcessCompleted From [DPM].[dbo].[Asset_FailureMode]&#xA;where IsProcessCompleted=1 AND Description=N'HXINL') F&#xA;LEFT JOIN&#xA;(select AssetName,Id from Asset_Equipments) A&#xA;ON (F.EquipmentId=A.Id)&#xA;LEFT JOIN&#xA;(select * from HXParameters)HX&#xA;ON (F.Id=HX.FailureModeId)"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -3186,16 +3186,16 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,55.2"
-          Size="204.8,97.6"
+          PanelSize="205,55"
+          Size="205,98"
           Id="Package\Assign Values to Variable"
           TopLeft="44,132" />
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="67,267" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Execute SQL Task"
           TopLeft="66,47" />
         <EdgeLayout
@@ -3251,39 +3251,39 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Data Flow Task\Derived Column 1"
           TopLeft="630.714296455286,191.176473269413" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="418.5714285471,189.235294106922" />
         <NodeLayout
-          Size="129.6,41.6"
+          Size="130,42"
           Id="Package\Data Flow Task\Clean Data"
           TopLeft="423.571435784807,268.411768470256" />
         <NodeLayout
-          Size="118.4,41.6"
+          Size="118,42"
           Id="Package\Data Flow Task\DC Error"
           TopLeft="177.142860159582,170.529414156316" />
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Data Flow Task\Validation Error"
           TopLeft="632.857153634636,269.176474363334" />
         <NodeLayout
-          Size="154.4,41.6"
+          Size="154,42"
           Id="Package\Data Flow Task\Conditional Split"
           TopLeft="569.285723980593,95.5882366347066" />
         <NodeLayout
-          Size="127.2,41.6"
+          Size="127,42"
           Id="Package\Data Flow Task\Aggregate"
           TopLeft="374.5714285471,89.2352941069224" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="38,23" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="153,84" />
         <EdgeLayout
@@ -3405,6 +3405,42 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Conditional Split Default Output]"
+          TopLeft="670.885723980593,137.188236634707">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.028572474693,53.9882366347064"
+              Start="0,0"
+              End="41.028572474693,46.4882366347064">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.92752995625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.92752995625"
+                    Point2="0,21.92752995625"
+                    Point3="4,21.92752995625" />
+                  <mssgle:LineSegment
+                    End="37.028572474693,21.92752995625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.028572474693,21.92752995625"
+                    Point2="41.028572474693,21.92752995625"
+                    Point3="41.028572474693,25.92752995625" />
+                  <mssgle:LineSegment
+                    End="41.028572474693,46.4882366347064" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-50.0996200126535,26.92752995625,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Case 1]"
           TopLeft="646.485723980593,137.188236634707">
           <EdgeLayout.Curve>
@@ -3460,42 +3496,6 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Conditional Split Default Output]"
-          TopLeft="670.885723980593,137.188236634707">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41.028572474693,53.9882366347064"
-              Start="0,0"
-              End="41.028572474693,46.4882366347064">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.92752995625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.92752995625"
-                    Point2="0,21.92752995625"
-                    Point3="4,21.92752995625" />
-                  <mssgle:LineSegment
-                    End="37.028572474693,21.92752995625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.028572474693,21.92752995625"
-                    Point2="41.028572474693,21.92752995625"
-                    Point3="41.028572474693,25.92752995625" />
-                  <mssgle:LineSegment
-                    End="41.028572474693,46.4882366347064" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-50.0996200126535,26.92752995625,141.2278125,11.658203125"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

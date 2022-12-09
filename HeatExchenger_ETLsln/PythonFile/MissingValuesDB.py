@@ -3,7 +3,7 @@ import pandas as pd
 import pyodbc as odbc
 
 
-conn = odbc.connect('Driver=SQL SERVER;Server=DESKTOP-CGG65T8;Database=DPM;Integrated Security=True')
+conn = odbc.connect('Driver=SQL SERVER;Server=DESKTOP-6EBQLBP;Database=DPM;Integrated Security=True')
 
 cursor = conn.cursor()
 batchId=int(sys.argv[1])
