@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="86"
-  DTS:VersionGUID="{4EC9DE40-DBFF-4C8A-9DE1-86E622250206}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{A7A2FC2C-25D7-4B17-8CEB-79FC0CE627C2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -71,6 +71,24 @@
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{49C88491-BAA3-4CBE-A1D7-42CF102F5920}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LMTDFindingChange">
+      <DTS:VariableValue
+        DTS:DataType="2">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62CAE336-19BD-4CF3-B6AC-C953DE29E79A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LMTDrange">
+      <DTS:VariableValue
+        DTS:DataType="2">0</DTS:VariableValue>
+    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
@@ -96,26 +114,26 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{5F7A2C73-3BA6-4015-970D-6935A3535769}"
-          DTS:ObjectName="{5F7A2C73-3BA6-4015-970D-6935A3535769}"
+          DTS:DTSID="{29C5767C-350F-4C3F-B40A-24301F33CA8E}"
+          DTS:ObjectName="{29C5767C-350F-4C3F-B40A-24301F33CA8E}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FMId" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{755F3286-1819-4622-8115-3086BC4101C3}"
-          DTS:ObjectName="{755F3286-1819-4622-8115-3086BC4101C3}"
+          DTS:DTSID="{EB650DB7-23CC-4CA3-95B4-95C0059B7EEE}"
+          DTS:ObjectName="{EB650DB7-23CC-4CA3-95B4-95C0059B7EEE}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::IsProcessCompleted" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{4D7ECF64-682A-4B27-930C-17FE40314D7D}"
-          DTS:ObjectName="{4D7ECF64-682A-4B27-930C-17FE40314D7D}"
+          DTS:DTSID="{47B4ED35-0761-4F1B-9C40-623FB5D6018E}"
+          DTS:ObjectName="{47B4ED35-0761-4F1B-9C40-623FB5D6018E}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::AssetName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{8BF8C04C-120F-4EC3-B3F7-2665141E3C8B}"
-          DTS:ObjectName="{8BF8C04C-120F-4EC3-B3F7-2665141E3C8B}"
+          DTS:DTSID="{E253EE17-769B-43F9-9A52-E224E66FD58C}"
+          DTS:ObjectName="{E253EE17-769B-43F9-9A52-E224E66FD58C}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::HXId" />
       </DTS:ForEachVariableMappings>
@@ -134,6 +152,319 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."HXCleaningTables"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{8D7ECAB1-97A5-44A1-8E97-867774386121}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ADO.Net]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[HXId]"
+                      cachedDataType="i4"
+                      cachedName="HXId"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HXId]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[HXId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Date]"
+                      cachedDataType="date"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[incipient]"
+                      cachedDataType="i1"
+                      cachedName="incipient"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Incipient]"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[incipient]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[change]"
+                      cachedDataType="i1"
+                      cachedName="change"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Change]"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[change]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[range]"
+                      cachedDataType="i1"
+                      cachedName="range"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Range]"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[range]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCTT1]"
+                      cachedDataType="r8"
+                      cachedName="DCTT1"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TT1]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTT1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCTT2]"
+                      cachedDataType="r8"
+                      cachedName="DCTT2"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TT2]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTT2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCTS1]"
+                      cachedDataType="r8"
+                      cachedName="DCTS1"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TS1]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTS1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCTS2]"
+                      cachedDataType="r8"
+                      cachedName="DCTS2"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TS2]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTS2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCFT1]"
+                      cachedDataType="r8"
+                      cachedName="DCFT1"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FT1]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCFT1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCFT2]"
+                      cachedDataType="r8"
+                      cachedName="DCFT2"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FT2]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCFT2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCPT1]"
+                      cachedDataType="r8"
+                      cachedName="DCPT1"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PT1]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPT1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCPT2]"
+                      cachedDataType="r8"
+                      cachedName="DCPT2"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PT2]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPT2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCPS1]"
+                      cachedDataType="r8"
+                      cachedName="DCPS1"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PS1]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPS1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCPS2]"
+                      cachedDataType="r8"
+                      cachedName="DCPS2"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PS2]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPS2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCMass]"
+                      cachedDataType="r8"
+                      cachedName="DCMass"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Mass]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCMass]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCSpecificHeat]"
+                      cachedDataType="r8"
+                      cachedName="DCSpecificHeat"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SpecificHeat]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCSpecificHeat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCHTC]"
+                      cachedDataType="r8"
+                      cachedName="DCHTC"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HTC]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHTC]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCHeatEnergy]"
+                      cachedDataType="r8"
+                      cachedName="DCHeatEnergy"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HeatEnergy]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHeatEnergy]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCLMTD]"
+                      cachedDataType="decimal"
+                      cachedName="DCLMTD"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LMTD]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCArea]"
+                      cachedDataType="r8"
+                      cachedName="DCArea"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Area]"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCArea]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Diff]"
+                      cachedDataType="decimal"
+                      cachedName="Diff"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Difference]"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HXId]"
+                      dataType="i4"
+                      name="HXId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TT1]"
+                      dataType="r4"
+                      name="TT1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TT2]"
+                      dataType="r4"
+                      name="TT2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TS1]"
+                      dataType="r4"
+                      name="TS1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TS2]"
+                      dataType="r4"
+                      name="TS2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FT1]"
+                      dataType="r4"
+                      name="FT1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FT2]"
+                      dataType="r4"
+                      name="FT2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PT1]"
+                      dataType="r4"
+                      name="PT1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PT2]"
+                      dataType="r4"
+                      name="PT2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PS1]"
+                      dataType="r4"
+                      name="PS1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PS2]"
+                      dataType="r4"
+                      name="PS2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Mass]"
+                      dataType="r4"
+                      name="Mass" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SpecificHeat]"
+                      dataType="r4"
+                      name="SpecificHeat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HTC]"
+                      dataType="r4"
+                      name="HTC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HeatEnergy]"
+                      dataType="r4"
+                      name="HeatEnergy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LMTD]"
+                      dataType="r4"
+                      name="LMTD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Area]"
+                      dataType="r4"
+                      name="Area" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Difference]"
+                      dataType="numeric"
+                      name="Difference"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Range]"
+                      dataType="ui1"
+                      name="Range" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Change]"
+                      dataType="ui1"
+                      name="Change" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Incipient]"
+                      dataType="ui1"
+                      name="Incipient" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\Aggregate"
               componentClassID="Microsoft.Aggregate"
@@ -182,7 +513,7 @@
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HXId]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="date"
                       cachedName="Date"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]" />
                     <inputColumn
@@ -257,8 +588,9 @@
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCHeatEnergy]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[DCLMTD]"
-                      cachedDataType="r8"
+                      cachedDataType="decimal"
                       cachedName="DCLMTD"
+                      cachedScale="10"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCLMTD]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Aggregate.Inputs[Aggregate Input 1].Columns[DCArea]"
@@ -339,7 +671,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Date]"
-                      dataType="dbDate"
+                      dataType="date"
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Date]"
                       name="Date">
                       <properties>
@@ -729,7 +1061,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]"
-                      dataType="r8"
+                      dataType="decimal"
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]"
                       name="DCLMTD">
                       <properties>
@@ -785,444 +1117,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Clean Data"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="Clean Data"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[HXCleaningTables] VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) </property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Clean Data.Connections[OleDbConnection]"
-                  connectionManagerID="{2D18945F-6FAB-4067-935A-FE64A16261F3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-CGG65T8.DPM1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[HXId]"
-                      cachedDataType="i4"
-                      cachedName="HXId"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[HXId]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCTT1]"
-                      cachedDataType="r8"
-                      cachedName="DCTT1"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTT1]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCTT2]"
-                      cachedDataType="r8"
-                      cachedName="DCTT2"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTT2]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCTS1]"
-                      cachedDataType="r8"
-                      cachedName="DCTS1"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTS1]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCTS2]"
-                      cachedDataType="r8"
-                      cachedName="DCTS2"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCTS2]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCFT1]"
-                      cachedDataType="r8"
-                      cachedName="DCFT1"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCFT1]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCFT2]"
-                      cachedDataType="r8"
-                      cachedName="DCFT2"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCFT2]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCPT1]"
-                      cachedDataType="r8"
-                      cachedName="DCPT1"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPT1]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCPT2]"
-                      cachedDataType="r8"
-                      cachedName="DCPT2"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPT2]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCPS1]"
-                      cachedDataType="r8"
-                      cachedName="DCPS1"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPS1]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCPS2]"
-                      cachedDataType="r8"
-                      cachedName="DCPS2"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCPS2]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCMass]"
-                      cachedDataType="r8"
-                      cachedName="DCMass"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCMass]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCSpecificHeat]"
-                      cachedDataType="r8"
-                      cachedName="DCSpecificHeat"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCSpecificHeat]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCHTC]"
-                      cachedDataType="r8"
-                      cachedName="DCHTC"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHTC]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCHeatEnergy]"
-                      cachedDataType="r8"
-                      cachedName="DCHeatEnergy"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHeatEnergy]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCLMTD]"
-                      cachedDataType="r8"
-                      cachedName="DCLMTD"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[DCArea]"
-                      cachedDataType="r8"
-                      cachedName="DCArea"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCArea]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[Trend]"
-                      cachedDataType="r4"
-                      cachedName="Trend"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Trend]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[TrendPercen]"
-                      cachedDataType="decimal"
-                      cachedName="TrendPercen"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[TrendPercen]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].Columns[isSpike]"
-                      cachedDataType="bool"
-                      cachedName="isSpike"
-                      externalMetadataColumnId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[isSpike]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="i4"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="dbTimeStamp2"
-                      name="Param_1"
-                      scale="7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">1073741889</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="r4"
-                      name="Param_2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      dataType="r4"
-                      name="Param_3">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      dataType="r4"
-                      name="Param_4">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="r4"
-                      name="Param_5">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      dataType="r4"
-                      name="Param_6">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      dataType="r4"
-                      name="Param_7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      dataType="r4"
-                      name="Param_8">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      dataType="r4"
-                      name="Param_9">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      dataType="r4"
-                      name="Param_10">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      dataType="r4"
-                      name="Param_11">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      dataType="r4"
-                      name="Param_12">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                      dataType="r4"
-                      name="Param_13">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                      dataType="r4"
-                      name="Param_14">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                      dataType="r4"
-                      name="Param_15">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
-                      dataType="r4"
-                      name="Param_16">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                      dataType="r4"
-                      name="Param_17">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                      dataType="bool"
-                      name="Param_18">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
-                      dataType="r4"
-                      name="Param_19">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
-                      dataType="numeric"
-                      name="Param_20"
-                      precision="18"
-                      scale="4">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Clean Data.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Clean Data.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Data Flow Task\Conditional Split"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1242,7 +1136,7 @@
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCHeatEnergy]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[DCLMTD]"
-                      cachedDataType="r8"
+                      cachedDataType="decimal"
                       cachedName="DCLMTD"
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]" />
                     <inputColumn
@@ -1431,7 +1325,7 @@
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Area]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="date"
                       cachedName="Date"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]" />
                   </inputColumns>
@@ -1727,11 +1621,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCLMTD]"
-                      dataType="r8"
+                      dataType="decimal"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCLMTD]"
                       name="DCLMTD"
+                      scale="10"
                       truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
@@ -1767,7 +1662,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
-                      dataType="dbDate"
+                      dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
@@ -2002,7 +1897,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="date"
                       cachedName="Date"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -2347,7 +2242,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[DCLMTD]"
-                      cachedDataType="r8"
+                      cachedDataType="decimal"
                       cachedName="DCLMTD"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -2392,12 +2287,82 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[TrendPercen]"
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[incipient]"
+                      cachedDataType="i1"
+                      cachedName="incipient"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[incipient]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[incipient]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">incipient</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[change]"
+                      cachedDataType="i1"
+                      cachedName="change"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[change]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[change]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">change</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[range]"
+                      cachedDataType="i1"
+                      cachedName="range"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[range]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[range]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">range</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Diff]"
                       cachedDataType="decimal"
-                      cachedName="TrendPercen"
+                      cachedName="Diff"
+                      cachedScale="10"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[TrendPercen]"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -2405,59 +2370,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[TrendPercen]}</property>
+                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">TrendPercen</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Trend]"
-                      cachedDataType="r4"
-                      cachedName="Trend"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Trend]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Trend]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">Trend</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[isSpike]"
-                      cachedDataType="bool"
-                      cachedName="isSpike"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[isSpike]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[isSpike]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">isSpike</property>
+                          name="FriendlyExpression">Diff</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -2559,7 +2478,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input].Columns[Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="date"
                       cachedName="Date"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -2701,7 +2620,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
-                      dataType="dbDate"
+                      dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
@@ -2948,6 +2867,10 @@
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Area]"
                       dataType="nText"
                       name="Area" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsZero]"
+                      dataType="bool"
+                      name="IsZero" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3097,11 +3020,11 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("SC_de7f11995dd04319afbff9ed23e91e4f")]
+[assembly: AssemblyTitle("SC_1a6b9a7220944cc88039dc5825c84d13")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SC_de7f11995dd04319afbff9ed23e91e4f")]
+[assembly: AssemblyProduct("SC_1a6b9a7220944cc88039dc5825c84d13")]
 [assembly: AssemblyCopyright("Copyright @  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -3269,6 +3192,11 @@ using Microsoft.SqlServer.Dts.Runtime.Wrapper;
 [Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
 public class ScriptMain : UserComponent
 {
+   public short prevrange = 0;
+   public short change = 0;
+   public int pointer = 0;
+   List<short> changecollection = new List<short>();
+  
     #region Help:  Using Integration Services variables and parameters
     /* To use a variable in this script, first ensure that the variable has been added to
      * either the list contained in the ReadOnlyVariables property or the list contained in
@@ -3324,10 +3252,6 @@ public class ScriptMain : UserComponent
      *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
      */
     #endregion
-    public double previousrange;
-    public double change;
-    public int pointer;
-    List<double> ArrayOfChange = new List<double>();
 
     /// <summary>
     /// This method is called once, before rows begin to be processed in the data flow.
@@ -3337,12 +3261,8 @@ public class ScriptMain : UserComponent
     public override void PreExecute()
     {
         base.PreExecute();
-        previousrange = 0;
+        prevrange = 0;
         change = 0;
-       
-        /*
-         * Add your code here
-         */
     }
 
     /// <summary>
@@ -3368,56 +3288,79 @@ public class ScriptMain : UserComponent
     ///  Row.ZipCode = zipCode
     /// </summary>
     /// <param name="Row">The row that is currently passing through the component</param>
+
+    private void Add(short value)
+    {
+        if (changecollection.Count < 10)
+        {
+            changecollection.Add(value);
+        }
+        else
+        {
+            changecollection[pointer] = value;
+            if (pointer == 10)
+            {
+                pointer = 0;
+            }
+            pointer = pointer + 1;
+
+        }
+    }
     public override void Input0_ProcessInputRow(Input0Buffer Row)
     {
-        double LMTD = 0;
-        double Trend = 0;
-        double currentrange = 0;
-        double TrendPercen = 0;
-        // Worry about nulls in source data
-        if (!Row.DCLMTD_IsNull)
+        decimal diff = 0;
+        short range = 0;
+        short incipient = 0;
+       short changecheck = 0;
+       
+        decimal lmtdconst = Convert.ToDecimal(77.27);
+        // calculation Diff
+        diff = ((Row.DCLMTD - lmtdconst) / lmtdconst) * 100;
+        // calcution range
+        if (diff > 10)
         {
-            pointer = pointer + 1;
-            LMTD = Row.DCLMTD;
-            TrendPercen = (((LMTD - 77.27) / 77.27)*100);
-            if (TrendPercen > 10) { currentrange = 1; }
-            else if (TrendPercen < -10) { currentrange = -1; }
-            else { currentrange = 0; }
+            range = 1;
+        }else if(diff < -10)
+        {
+            range = -1;
         }
-        ArrayOfChange.Add(currentrange);
-        
-        var diff = previousrange - currentrange;
-        if (diff == 2 || diff==-2) 
-        { 
+        else
+        {
+            range = 0;
+        }
+        // calculate previousrange
+        if(prevrange != 0)
+        {
+            changecheck = (short)(range - prevrange);
+        }
+        if(changecheck ==2 || changecheck ==-2)
+        {
             change = 1;
-            Row.isSpike = true;
         }
         else
         {
             change = 0;
-            Row.isSpike = false;
         }
-
-
-        if (pointer == 10) 
+        short incipientCheck = 0;
+        //set value
+        if (changecollection.Count == 10)
         {
-           var max=ArrayOfChange.Max();
-           var trend = max + change;
-           if (trend == 2)
-           {
-              Row.Trend = 1;
-           }
-           else
-           {
-              Row.Trend = 0;
-           }
-            ArrayOfChange.Clear();
+            incipientCheck = (short)(changecollection.Max<short>() + change);
         }
-        // Might want to set growth's IsNull if no action performed via the else clause
-        Row.TrendPercen = (decimal)TrendPercen;
-        // Update the "previous" value with current for next loop
-        // Again, be wary of nulls and understand how business expects the calculations to work
-        previousrange = currentrange;
+        Add(change);
+        if (incipientCheck == 2)
+        {
+            incipient = 1;
+        }
+        else
+        {
+            incipient = 0;
+        }
+        Row.Diff = diff;
+        Row.range = Convert.ToSByte(range);
+        prevrange = range;
+        Row.change = Convert.ToSByte(change);
+        Row.incipient = Convert.ToSByte(incipient);
     }
 
 }
@@ -3447,14 +3390,14 @@ public class Input0Buffer: ScriptBuffer
     {
     }
 
-    public Double DCLMTD
+    public DateTime Date
     {
         get
         {
-            return Buffer.GetDouble(BufferColumnIndexes[0]);
+            return Buffer.GetDateTime(BufferColumnIndexes[0]);
         }
     }
-    public bool DCLMTD_IsNull
+    public bool Date_IsNull
     {
         get
         {
@@ -3462,36 +3405,29 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Decimal TrendPercen
+    public Decimal DCLMTD
     {
-        set
+        get
         {
-            this[1] = value;
+            return Buffer.GetDecimal(BufferColumnIndexes[1]);
         }
     }
-    public bool TrendPercen_IsNull
+    public bool DCLMTD_IsNull
     {
-        set
+        get
         {
-            if (value)
-            {
-                SetNull(1);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
+            return IsNull(1);
         }
     }
 
-    public Single Trend
+    public SByte incipient
     {
         set
         {
             this[2] = value;
         }
     }
-    public bool Trend_IsNull
+    public bool incipient_IsNull
     {
         set
         {
@@ -3506,20 +3442,64 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Boolean isSpike
+    public SByte change
     {
         set
         {
             this[3] = value;
         }
     }
-    public bool isSpike_IsNull
+    public bool change_IsNull
     {
         set
         {
             if (value)
             {
                 SetNull(3);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public SByte range
+    {
+        set
+        {
+            this[4] = value;
+        }
+    }
+    public bool range_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(4);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public Decimal Diff
+    {
+        set
+        {
+            this[5] = value;
+        }
+    }
+    public bool Diff_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(5);
             }
             else
             {
@@ -3613,77 +3593,7 @@ public class Variables
 }
 ]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[Project]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>SC_de7f11995dd04319afbff9ed23e91e4f</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>SC_de7f11995dd04319afbff9ed23e91e4f</msb:DisplayName>
-    <msb:ProjectId>{C52500A7-CE36-43A9-A16D-C6A009E483C5}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="SC_de7f11995dd04319afbff9ed23e91e4f.csproj" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:Breakpoint Include="7f783978718c42819b84f59e4e9b9e7d">
-      <msb:FileName>main.cs</msb:FileName>
-      <msb:ColumnNumber>12</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>157</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>C#</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-  </msb:ItemGroup>
-</c:Project>]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_de7f11995dd04319afbff9ed23e91e4f.Properties.Settings.get_Default():SC_de7f11995dd04319afbff9ed23e91e4f.Properties.Sett" +
-    "ings")]
-
-namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}
-]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[SC_de7f11995dd04319afbff9ed23e91e4f.csproj]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_1a6b9a7220944cc88039dc5825c84d13.csproj]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
@@ -3695,11 +3605,11 @@ namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b1571039-3f3e-4916-9024-090b5ddbe563}</ProjectGuid>
+    <ProjectGuid>{2fc6dd09-7b4f-4413-99ea-958a80a64066}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_de7f11995dd04319afbff9ed23e91e4f</RootNamespace>
-    <AssemblyName>SC_de7f11995dd04319afbff9ed23e91e4f</AssemblyName>
+    <RootNamespace>SC_1a6b9a7220944cc88039dc5825c84d13</RootNamespace>
+    <AssemblyName>SC_1a6b9a7220944cc88039dc5825c84d13</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
@@ -3766,7 +3676,7 @@ namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
     <VisualStudio>
       <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
         <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptComponent" GeneratedNamespace="SC_de7f11995dd04319afbff9ed23e91e4f" IconIndex="0"></Host>
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_1a6b9a7220944cc88039dc5825c84d13" IconIndex="0"></Host>
         <ProjectClient>
           <HostIdentifier>SSIS_SC150</HostIdentifier>
         </ProjectClient>
@@ -3774,6 +3684,76 @@ namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_1a6b9a7220944cc88039dc5825c84d13</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_1a6b9a7220944cc88039dc5825c84d13</msb:DisplayName>
+    <msb:ProjectId>{EAD0D503-3204-4EB5-8FFC-8C167688D579}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_1a6b9a7220944cc88039dc5825c84d13.csproj" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:Breakpoint Include="305235b2294747f483b02e635cd2252f">
+      <msb:FileName>main.cs</msb:FileName>
+      <msb:ColumnNumber>5</msb:ColumnNumber>
+      <msb:Enabled>True</msb:Enabled>
+      <msb:LineNumber>123</msb:LineNumber>
+      <msb:Condition>
+      </msb:Condition>
+      <msb:ConditionType>1</msb:ConditionType>
+      <msb:Language>C#</msb:Language>
+      <msb:HitCountType>1</msb:HitCountType>
+      <msb:HitCountTarget>1</msb:HitCountTarget>
+    </msb:Breakpoint>
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1a6b9a7220944cc88039dc5825c84d13.Properties.Settings.get_Default():SC_1a6b9a7220944cc88039dc5825c84d13.Properties.Sett" +
+    "ings")]
+
+namespace SC_1a6b9a7220944cc88039dc5825c84d13.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
                     <arrayElement
@@ -3800,14 +3780,14 @@ namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_de7f11995dd04319afbff9ed23e91e4f.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1a6b9a7220944cc88039dc5825c84d13.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
     "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_de7f11995dd04319afbff9ed23e91e4f.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1a6b9a7220944cc88039dc5825c84d13.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
     "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_de7f11995dd04319afbff9ed23e91e4f.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1a6b9a7220944cc88039dc5825c84d13.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
     "):Void")]
 
-namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
+namespace SC_1a6b9a7220944cc88039dc5825c84d13.Properties {
     
     
     /// <summary>
@@ -3835,7 +3815,7 @@ namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_de7f11995dd04319afbff9ed23e91e4f.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_1a6b9a7220944cc88039dc5825c84d13.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -3869,159 +3849,168 @@ namespace SC_de7f11995dd04319afbff9ed23e91e4f.Properties {
                   <arrayElements
                     arrayElementCount="2">
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_de7f11995dd04319afbff9ed23e91e4f.dll]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_1a6b9a7220944cc88039dc5825c84d13.dll]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[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
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMcPk2MAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAejUA
+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
-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
+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
-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
-BgB5ADAFPAB5AA0FRgB5AAwGSgCBAK4ATgB5AAAEUwB5AA8EWAB5AAcEAQDxADAFEAB5AA8HXgB5
-AFQGXgCZADAFBgAJAToGYgCZACAGagChADAFBgAZAcoAcAAZARsHeQCxADAFfwDRADAFBgAuAAsA
-IQEuABMAKgEuABsASQEuACMAUgEuACsAewEuADMAewEuADsAewEuAEMAUgEuAEsAgQEuAFMAewEu
-AFsAmAFDAGMA4gHjAGsA4gEpAXMASQFJAXMASQFhAXsA4gEbAAMAAQAHAAkACAALAAAAKwABAQAA
-vgMFAQAANwQJAQAA9AMFAQAAXgAOAQAA0AMFAQAAmwAFAQAA4QMFAQAAGAUSAQAAPwEXAQAAcAYc
-AQIABgADAAIABwAFAAEACAAHAAEACQAJAAEACgALAAEACwANAAEADAAPAAEADQARAAIAFwATAAIA
-GAAVAAEAGQAVAAIAGgAXACEABIAAAAEAAAAAAAAAAAAAAAAALwMAAAQAAAAAAAAAAAAAAIcAMgAA
-AAAADwAAAAAAAAAAAAAAkACmBgAAAAAPAAAAAAAAAAAAAACQAMMGAAAAAAQAAAAAAAAAAAAAAIcA
-GAQAAAAABAAAAAAAAAAAAAAAhwATAQAAAAAAAAAAAQAAAIEFAAAAAAAAAElFbnVtZXJhYmxlYDEA
-TGlzdGAxADxNb2R1bGU+AElucHV0SUQAZ2V0X0RDTE1URABtc2NvcmxpYgBTeXN0ZW0uQ29sbGVj
-dGlvbnMuR2VuZXJpYwBBZGQAc2V0X1RyZW5kAGRlZmF1bHRJbnN0YW5jZQBBcnJheU9mQ2hhbmdl
-AGNoYW5nZQBwcmV2aW91c3JhbmdlAHNldF9pc1NwaWtlAEVudW1lcmFibGUAR2V0RG91YmxlAFJ1
-bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAFNpbmdsZQBJbnB1dE5hbWUATWljcm9z
-b2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAVHlwZQBTeXN0ZW0uQ29yZQBnZXRfQ3VsdHVyZQBz
-ZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9y
-QnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2Vy
-Q29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0
-ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdl
-dEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1i
-bHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFz
-c2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2Ny
-aXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUA
-UnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1
-ZQBTQ19kZTdmMTE5OTVkZDA0MzE5YWZiZmY5ZWQyM2U5MWU0ZgBTeXN0ZW0uUnVudGltZS5WZXJz
-aW9uaW5nAFN0cmluZwBEZWNpbWFsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ19kZTdmMTE5OTVk
-ZDA0MzE5YWZiZmY5ZWQyM2U5MWU0Zi5kbGwAZ2V0X0RDTE1URF9Jc051bGwAc2V0X1RyZW5kX0lz
-TnVsbABzZXRfaXNTcGlrZV9Jc051bGwAc2V0X1RyZW5kUGVyY2VuX0lzTnVsbABTZXROdWxsAHNl
-dF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBCb29sZWFuAHNldF9UcmVuZFBlcmNlbgBTY3JpcHRN
-YWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZs
-ZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJl
-SW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABTeXN0ZW0uTGlucQBDbGVhcgBJbnB1dDBCdWZm
-ZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIAcG9pbnRl
-cgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVy
-U2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ19kZTdmMTE5OTVkZDA0MzE5YWZiZmY5ZWQyM2U5
-MWU0Zi5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfZGU3
-ZjExOTk1ZGQwNDMxOWFmYmZmOWVkMjNlOTFlNGYuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVy
-Q29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9u
-cwBPYmplY3QARW5kT2ZSb3dzZXQAb3BfRXhwbGljaXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVu
-dABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhT
-Y3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1
-dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cATWF4AGdldF9Bc3NlbWJseQAAgJtJAHMA
-TgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0ACAAYgBlACAAcwBlAHQAIAB0
-AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYAYQBsAHUAZQAgAHQAbwAgAHQA
-aABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4AcAB1AHQAIAAwAABxUwBD
-AF8AZABlADcAZgAxADEAOQA5ADUAZABkADAANAAzADEAOQBhAGYAYgBmAGYAOQBlAGQAMgAzAGUA
-OQAxAGUANABmAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAADIbmDM
-v7bFTbx6tTt7udZtAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFhBQcDDQ0NBRUSOQENBSABARMA
-CAABDRUSdQENBQABEUkNCSADARJBHQgSRQMGEkEDBh0IBCABDQgEIAECCAUgAgEIHAMgAAIHIAIC
-DhGAiQUgAR0ICAgAARKAjRGAkQUgABKAlQcgAgEOEoCVCLd6XFYZNOCJCImEXc2AgMyRAgYNAgYI
-BgYVEjkBDQMGEhQDBhIYAwYSTQMGElkDBhJdAwYSIAUgAQESDAMgAA0FIAEBEUkEIAEBAgQgAQEM
-CSAEAQgOEkESRQUgAQESTQQAABJZBAAAEl0FAAEBEl0EAAASIAMAAAEDKAANAygAAgQoABFJAygA
-DAQIABJZBAgAEl0ECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEI
-AQACAAAAAAAoAQAjU0NfZGU3ZjExOTk1ZGQwNDMxOWFmYmZmOWVkMjNlOTFlNGYAAAUBAAAAABYB
-ABFDb3B5cmlnaHQgQCAgMjAyMgAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRG
-cmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcEAQAAAAC0AAAAzsrvvgEAAACR
-AAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQu
-MC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNT
-eXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAA
-UDUAAAAAAAAAAAAAajUAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFw1AAAAAAAAAAAAAAAAX0Nv
-ckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABI
-AAAAWEAAAOwDAAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAA
-AAC9BO/+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
-AAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4A
-AAAAAAAAsARMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAw
-ADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4A
-eQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAA
-AFMAQwBfAGQAZQA3AGYAMQAxADkAOQA1AGQAZAAwADQAMwAxADkAYQBmAGIAZgBmADkAZQBkADIA
-MwBlADkAMQBlADQAZgAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAw
-AC4AMAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AZABlADcAZgAxADEA
-OQA5ADUAZABkADAANAAzADEAOQBhAGYAYgBmAGYAOQBlAGQAMgAzAGUAOQAxAGUANABmAC4AZABs
-AGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgA
-dAAgAEAAIAAgADIAMAAyADIAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAA
-AAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwBkAGUA
-NwBmADEAMQA5ADkANQBkAGQAMAA0ADMAMQA5AGEAZgBiAGYAZgA5AGUAZAAyADMAZQA5ADEAZQA0
-AGYALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8AZABlADcA
-ZgAxADEAOQA5ADUAZABkADAANAAzADEAOQBhAGYAYgBmAGYAOQBlAGQAMgAzAGUAOQAxAGUANABm
-AAAANAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgA
-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
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAUBcAAAAgAAAAGAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAaAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAs
+NwAAAAAAAEgAAAACAAUAuCMAAIgSAAABAAAAAAAAAEA2AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAFYCKBAAAAoCFn0BAAAEAhZ9AgAABCoeAigRAAAKKgAAEzAD
+AE4AAAAAAAAAAnsEAAAEbxIAAAofCi8NAnsEAAAEA28TAAAKKgJ7BAAABAJ7AwAABANvFAAACgJ7
+AwAABB8KMwcCFn0DAAAEAgJ7AwAABBdYfQMAAAQqAAATMAIACAEAAAEAABESAP4VDwAAARYLFgwW
+DSPhehSuR1FTQCgVAAAKEwQDbwkAAAYRBCgWAAAKEQQoFwAACh9kcxgAAAooGQAACgoGHwpzGAAA
+CigaAAAKLAQXCysVBh/2cxgAAAooGwAACiwEFQsrAhYLAnsBAAAELAoHAnsBAAAEWWgNCRguBQkf
+/jMJAhd9AgAABCsHAhZ9AgAABBYTBQJ7BAAABG8SAAAKHwozFQJ7BAAABCgBAAArAnsCAAAEWGgT
+BQICewIAAAQoAwAABhEFGDMEFwwrAhYMAwZvEQAABgMHKB0AAApvDwAABgIHfQEAAAQDAnsCAAAE
+KB0AAApvDQAABgMIKB0AAApvCwAABipKAnMeAAAKfQQAAAQCKBUAAAYqKgIDBAUoHwAACipSAnsg
+AAAKAnshAAAKFpRvIgAACioiAhYoIwAACipSAnsgAAAKAnshAAAKF5RvJAAACioiAhcoIwAACio6
+AhgDjCAAAAEoJQAACipaAywIAhgoJgAACipyAQAAcHMnAAAKejoCGQOMIAAAASglAAAKKloDLAgC
+GSgmAAAKKnIBAABwcycAAAp6OgIaA4wgAAABKCUAAAoqWgMsCAIaKCYAAAoqcgEAAHBzJwAACno6
+AhsDjA8AAAEoJQAACipaAywIAhsoJgAACipyAQAAcHMnAAAKeh4CKCgAAAoqHgIoKQAACip+Aigq
+AAAKAgJzGQAABn0FAAAEAgJzGgAABn0GAAAEKpIEcp4AAHAabysAAAosFQIFAgMoLAAACg4EcwYA
+AAZvFwAABipKKwcCA28YAAAGA28TAAAGLfEqBio6AigtAAAKAgN9BwAABCo6AigtAAAKAgN9CAAA
+BCoeAigtAAAKKq5+CQAABC0ecq4AAHDQBwAAAiguAAAKby8AAApzMAAACoAJAAAEfgkAAAQqGn4K
+AAAEKh4CgAoAAAQqGn4LAAAEKh4CKDEAAAoqLnMgAAAGgAsAAAQqQlNKQgEAAQAAAAAADAAAAHY0
+LjAuMzAzMTkAAAAABQBsAAAALAcAACN+AACYBwAAmAcAACNTdHJpbmdzAAAAADAPAAAgAQAAI1VT
+AFAQAAAQAAAAI0dVSUQAAABgEAAAKAIAACNCbG9iAAAAAAAAAAIAAAFXFaIJCQkAAAD6ATMAFgAA
+AQAAACYAAAAIAAAACwAAACEAAAAWAAAAMQAAABAAAAABAAAAAwAAAA8AAAAQAAAAAQAAAAEAAAAF
+AAAAAQAAAAEAAAAAAJoDAQAAAAAABgBuAp4FBgACA54FBgC6AYsFDwASBgAABgDnAbsEBgBRArsE
+BgAyArsEBgDpArsEBgCOArsEBgCnArsEBgD+AbsEBgAZAk4DCgDCAvIABgAPAF8ABgB8Az0ECgBV
+BfIADgBGBfIACgAVBfIABgDpAD0ECgDmBvIABgCbBj0EBgCdAYsFBgBmBb4FBgAJBZcEEgBtAYQD
+EgDOAYQDEgBMAYIEBgCCAZ4FBgAdBz0EFgCtAC0FBgABAF8ABgA5Az0EBgDeBD0EBgBoAz0EBgD4
+BD0EBgATAT0EBgC4AD0EBgCBB7sEAAAAADoAAAAAAAEAAQABABAAawQAABAAAQABAAEAEAA5BQAA
+QQAFAAYAAQAQAMgGAABRAAUAFQABABAAjwYAAFUABwAZAAEAEABQBgAAVQAIABoAAAAQAMUFIQZV
+AAkAGwAAARAAfwYhBm0ACwAfAAYAowDNAAYAkgDNAAYAdgXQAAEAzQTTAAYAjwbaAAYAUAbeAAEA
+1gbiAAEA1gbiABEARATmABEAPAHqABEAfgDuAFAgAAAAAMYAIAMGAAEAZiAAAAAAxgArAwYAAQBw
+IAAAAACBAHoA8gABAMwgAAAAAMYAWgf3AAIA4CEAAAAAhhh+BQYAAwDzIQAAAACGGH4FaQADAP4h
+AAAAAIYIZAH9AAYAEyIAAAAAhgj3A5IABgAcIgAAAACGCEsAAgEGADEiAAAAAIYIwgOSAAYAOiIA
+AAAAhgi6BgcBBgBJIgAAAACGCBcEDAEHAGAiAAAAAIYIjgAHAQgAbyIAAAAAhgjUAwwBCQCGIgAA
+AACGCJkABwEKAJUiAAAAAIYI5gMMAQsArCIAAAAAhghFAxEBDAC7IgAAAACGCAcEDAENANIiAAAA
+AIYAcQeSAA4A2iIAAAAAhgCiBpIADgDiIgAAAACGGH4FBgAOAAIjAAAAAMYATQcXAQ4AJyMAAAAA
+xgFGB/cAEgA6IwAAAADGAVoH9wATADwjAAAAAIYYfgUhARQASyMAAAAAhhh+BSEBFQBaIwAAAACD
+GH4FBgAWAGIjAAAAAJMIYgUnARYAjiMAAAAAkwgkASwBFgCVIwAAAACTCDABMQEWAJ0jAAAAAJYI
+rgY3ARcApCMAAAAAhhh+BQYAFwCsIwAAAACRGIQFPAEXAAAAAQA/AwAAAQB1BwAAAQBbBQAAAgBa
+BgAAAwAjBQAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAA
+AQBDAAAAAgDcAAAAAwBbBQAABAAjBQAAAQBbBQAAAQB1BwAAAQDsBgAAAQDsBgAAAQA/AwkAfgUB
+ABEAfgUGABkAfgUKACkAfgUQADEAfgUQADkAfgUQAEEAfgUQAEkAfgUQAFEAfgUQAFkAfgUQAGEA
+fgUQAGkAfgUGALEAfgUGANEAfgUVAOEAfgUGAKEAIAMGAKEAKwMGAAwA9gYhAAwAegAlAAwANAQr
+AOkAbwM9AHkArARDAHkAdgRDAHkAfgUBAHkAigdDAHkAUARMAHkAXwRMAPEAeQdUAOkANwNkAAwA
+fgUGAIEAfgVpAIEAWwVzAIEAWgZ3AIkA5gB7AIEAJQSBAIkAeQOGAIEANASMAIEALAQBAAkBfgUQ
+AIEAcQeSAIEAogaSAKEAfgUGABEBiAaWAKEAbgaeAKkAfgUGACEBygCkACEBfQetALkAfgWzANkA
+fgUGAC4ACwBhAS4AEwBqAS4AGwCJAS4AIwCSAS4AKwC7AS4AMwC7AS4AOwC7AS4AQwCSAS4ASwDB
+AS4AUwC7AS4AWwDYAUMAYwAiAuMAawAiAmEBewAiAqkBcwCJAckBcwCJATIAAwABAAcADQAIAA8A
+AABoAUABAAD7A0UBAABPAEkBAADGA0UBAAC+Bk4BAAAbBEUBAACSAE4BAADYA0UBAACnAE4BAADq
+A0UBAABJA0kBAAALBEUBAABmBVIBAABEAVcBAACyBlwBAgAHAAMAAgAIAAUAAgAJAAcAAgAKAAkA
+AQALAAsAAQAMAA0AAQANAA8AAQAOABEAAQAPABMAAQAQABUAAQARABcAAQASABkAAgAcABsAAgAd
+AB0AAQAeAB0AAgAfAB8AGwAEgAAAAQAAAAAAAAAAAAAAAAAWAAAABAAAAAAAAAAAAAAAuwBWAAAA
+AAAPAAAAAAAAAAAAAADEAAAHAAAAAA8AAAAAAAAAAAAAAMQAJQcAAAAABAAAAAAAAAAAAAAAuwA9
+BAAAAAAEAAAAAAAAAAAAAAC7ABgBAAAAAAAAAAABAAAAzwUAADkAYAAAAAAAAElFbnVtZXJhYmxl
+YDEATGlzdGAxAFNDXzFhNmI5YTcyMjA5NDRjYzg4MDM5ZGM1ODI1Yzg0ZDEzADxNb2R1bGU+AElu
+cHV0SUQAZ2V0X0RDTE1URABtc2NvcmxpYgBTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYwBBZGQA
+ZGVmYXVsdEluc3RhbmNlAHNldF9jaGFuZ2UAc2V0X3JhbmdlAHByZXZyYW5nZQBFbnVtZXJhYmxl
+AFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAElucHV0TmFtZQBHZXREYXRlVGlt
+ZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAFN5c3RlbS5Db3JlAGdldF9D
+dWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFz
+ZQBnZXRfRGF0ZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0
+ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9y
+QnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1h
+cmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlv
+bkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhh
+dGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0
+QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5
+Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRl
+AFBvc3RFeGVjdXRlAFRvU0J5dGUAdmFsdWUAc2V0X0RpZmYAU3lzdGVtLlJ1bnRpbWUuVmVyc2lv
+bmluZwBTdHJpbmcAVG9EZWNpbWFsAEdldERlY2ltYWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFND
+XzFhNmI5YTcyMjA5NDRjYzg4MDM5ZGM1ODI1Yzg0ZDEzLmRsbABnZXRfRENMTVREX0lzTnVsbABz
+ZXRfY2hhbmdlX0lzTnVsbABzZXRfcmFuZ2VfSXNOdWxsAGdldF9EYXRlX0lzTnVsbABzZXRfRGlm
+Zl9Jc051bGwAc2V0X2luY2lwaWVudF9Jc051bGwAU2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0AcmVz
+b3VyY2VNYW4Ab3BfR3JlYXRlclRoYW4Ab3BfTGVzc1RoYW4AU2NyaXB0TWFpbgBvcF9EaXZpc2lv
+bgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBvcF9TdWJ0cmFjdGlv
+bgBTeXN0ZW0uUmVmbGVjdGlvbgBjaGFuZ2Vjb2xsZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNl
+cHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1h
+cABTeXN0ZW0uTGlucQBJbnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdl
+dF9SZXNvdXJjZU1hbmFnZXIAcG9pbnRlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNz
+AFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ18xYTZi
+OWE3MjIwOTQ0Y2M4ODAzOWRjNTgyNWM4NGQxMy5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJj
+ZXMARGVidWdnaW5nTW9kZXMAU0NfMWE2YjlhNzIyMDk0NGNjODgwMzlkYzU4MjVjODRkMTMuUHJv
+cGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVzAFNl
+dHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQA
+c2V0X2luY2lwaWVudABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25l
+bnQAZ2V0X0NvdW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQAQ29udmVydABNaWNyb3Nv
+ZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9j
+ZXNzSW5wdXRSb3cATmV4dFJvdwBNYXgAZ2V0X0Fzc2VtYmx5AG9wX011bHRpcGx5AAAAAICbSQBz
+AE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAA
+dABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0
+AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMA
+QwBfADEAYQA2AGIAOQBhADcAMgAyADAAOQA0ADQAYwBjADgAOAAwADMAOQBkAGMANQA4ADIANQBj
+ADgANABkADEAMwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA/yiy
+Npu2FEWXxqW1rnMPXgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERZQUVEjkBBgMgAAgFIAEBEwAG
+IAIBCBMACgcGET0GBgYRPQYFAAERPQ0IAAIRPRE9ET0HAAICET0RPQsQAQEeABUSfQEeAAMKAQYE
+AAEEBgkgAwESRR0IEkkDBhJFAwYdCAUgARFNCAQgAQIIBSABET0IBSACAQgcAyAAAgcgAgIOEYCN
+BSABHQgICAABEoCREYCVBSAAEoCZByACAQ4SgJkIt3pcVhk04IkIiYRdzYCAzJECBgYCBggGBhUS
+OQEGAwYSFAMGEhgDBhJRAwYSXQMGEmEDBhIgBCABAQYFIAEBEgwEIAARTQQgABE9BCABAQQEIAEB
+AgUgAQERPQkgBAEIDhJFEkkFIAEBElEEAAASXQQAABJhBQABARJhBAAAEiADAAABBCgAEU0DKAAC
+BCgAET0DKAAEBAgAEl0ECAASYQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9u
+VGhyb3dzAQgBAAIAAAAAACgBACNTQ18xYTZiOWE3MjIwOTQ0Y2M4ODAzOWRjNTgyNWM4NGQxMwAA
+BQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDIyAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0
+LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAAALQAAADO
+yu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZl
+cnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5
+MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFE
+UEFEULQAAAAgNwAAAAAAAAAAAAA6NwAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDcAAAAAAAAA
+AAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAB8NQAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgA
+AABYQAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAA
+AL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAA
+AQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAA
+AAAAAACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAwADAA
+MAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5
+AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAA
+UwBDAF8AMQBhADYAYgA5AGEANwAyADIAMAA5ADQANABjAGMAOAA4ADAAMwA5AGQAYwA1ADgAMgA1
+AGMAOAA0AGQAMQAzAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAA
+LgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwAxAGEANgBiADkAYQA3
+ADIAMgAwADkANAA0AGMAYwA4ADgAMAAzADkAZABjADUAOAAyADUAYwA4ADQAZAAxADMALgBkAGwA
+bAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0
+ACAAQAAgACAAMgAwADIAMgAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAA
+AAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADEAYQA2
+AGIAOQBhADcAMgAyADAAOQA0ADQAYwBjADgAOAAwADMAOQBkAGMANQA4ADIANQBjADgANABkADEA
+MwAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwAxAGEANgBi
+ADkAYQA3ADIAMgAwADkANAA0AGMAYwA4ADgAMAAzADkAZABjADUAOAAyADUAYwA4ADQAZAAxADMA
+AAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAI
+AAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAEw3AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </arrayElements>
                 </property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_de7f11995dd04319afbff9ed23e91e4f</property>
+                  typeConverter="NOTBROWSABLE">SC_1a6b9a7220944cc88039dc5825c84d13</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -4051,8 +4040,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
 &lt;a1:ScriptBreakpointInfo id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Microsoft.SqlServer.VSTAHosting/Microsoft.SqlServer.VSTAScriptingLib%2C%20Version%3D15.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D89845dcd8080cc91"&gt;
 &lt;Enabled&gt;true&lt;/Enabled&gt;
 &lt;File id="ref-3"&gt;main.cs&lt;/File&gt;
-&lt;FileLine&gt;157&lt;/FileLine&gt;
-&lt;FileColumn&gt;12&lt;/FileColumn&gt;
+&lt;FileLine&gt;123&lt;/FileLine&gt;
+&lt;FileColumn&gt;5&lt;/FileColumn&gt;
 &lt;/a1:ScriptBreakpointInfo&gt;
 &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
@@ -4063,7 +4052,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataChecksum140"
-                  typeConverter="NOTBROWSABLE">50</property>
+                  typeConverter="NOTBROWSABLE">C4</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -4075,8 +4064,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Data Flow Task\Script Component.Inputs[Input 0].Columns[Date]"
+                      cachedDataType="date"
+                      cachedName="Date"
+                      lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Date]" />
+                    <inputColumn
                       refId="Package\Data Flow Task\Script Component.Inputs[Input 0].Columns[DCLMTD]"
-                      cachedDataType="r8"
+                      cachedDataType="decimal"
                       cachedName="DCLMTD"
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCLMTD]" />
                   </inputColumns>
@@ -4090,20 +4084,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   synchronousInputId="Package\Data Flow Task\Script Component.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[TrendPercen]"
+                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[incipient]"
+                      dataType="i1"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[incipient]"
+                      name="incipient" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[change]"
+                      dataType="i1"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[change]"
+                      name="change" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[range]"
+                      dataType="i1"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[range]"
+                      name="range" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]"
                       dataType="decimal"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[TrendPercen]"
-                      name="TrendPercen" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Trend]"
-                      dataType="r4"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Trend]"
-                      name="Trend" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[isSpike]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[isSpike]"
-                      name="isSpike" />
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]"
+                      name="Diff"
+                      scale="10" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -4163,7 +4163,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Id]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Validation Error.Inputs[OLE DB Command Input].Columns[Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="date"
                       cachedName="Date"
                       externalMetadataColumnId="Package\Data Flow Task\Validation Error.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Date]" />
@@ -4272,7 +4272,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task\Clean Data.Inputs[OLE DB Command Input]"
+              endId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -4419,71 +4419,177 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="38,23" />
-        <NodeLayout
           Size="118,42"
           Id="Package\Data Flow Task\DC Error"
-          TopLeft="177.142860159582,170.529414156316" />
+          TopLeft="33.142860159582,329.529414156316" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task\Conditional Split"
-          TopLeft="569.285723980593,95.5882366347066" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="153,84" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Data Flow Task\Clean Data"
-          TopLeft="423.571435784807,268.411768470256" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Data Flow Task\Script Component"
-          TopLeft="509.285722958799,15.2941178615531" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Validation Error"
-          TopLeft="632.857153634636,269.176474363334" />
+          TopLeft="570.285723980593,82.5882366347066" />
         <NodeLayout
           Size="162,42"
           Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="630.714296455286,191.176473269413" />
+          TopLeft="738.714296455286,195.176473269413" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Script Component"
+          TopLeft="306,188" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="23,203" />
         <NodeLayout
           Size="127,42"
           Id="Package\Data Flow Task\Aggregate"
-          TopLeft="373.1428570942,88.4705882138447" />
+          TopLeft="268.1428570942,44.4705882138447" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="6,9" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task\Validation Error"
+          TopLeft="730.857153634636,287.176474363334" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Data Flow Task\ADO NET Destination"
+          TopLeft="465,302" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task\Derived Column"
-          TopLeft="418.5714285471,189.235294106922" />
+          TopLeft="525,197" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Output 0]"
-          TopLeft="616.219056292132,56.8941178615531">
+          Id="Package\Data Flow Task.Paths[Conditional Split Default Output]"
+          TopLeft="683.785723980593,124.588236634707">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="29.8666676884609,38.6941187731535"
+              EndConnector="135.928572474693,70.5882366347064"
               Start="0,0"
-              End="29.8666676884609,31.1941187731535">
+              End="135.928572474693,63.0882366347064">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.7041496679335" />
+                    End="0,20.3304134783456" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.7041496679335"
-                    Point2="0,15.7041496679335"
-                    Point3="4,15.7041496679335" />
+                    Point1="0,20.3304134783456"
+                    Point2="0,24.3304134783456"
+                    Point3="4,24.3304134783456" />
                   <mssgle:LineSegment
-                    End="25.8666676884609,15.7041496679335" />
+                    End="131.928572474693,24.3304134783456" />
                   <mssgle:CubicBezierSegment
-                    Point1="25.8666676884609,15.7041496679335"
-                    Point2="29.8666676884609,15.7041496679335"
-                    Point3="29.8666676884609,19.7041496679335" />
+                    Point1="131.928572474693,24.3304134783456"
+                    Point2="135.928572474693,24.3304134783456"
+                    Point3="135.928572474693,28.3304134783456" />
                   <mssgle:LineSegment
-                    End="29.8666676884609,31.1941187731535" />
+                    End="135.928572474693,63.0882366347064" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-2.64962001265354,29.3304134783456,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Case 1]"
+          TopLeft="647.285723980593,124.588236634707">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45.285723980593,72.4117633652934"
+              Start="0,0"
+              End="-45.285723980593,64.9117633652934">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.2058816826467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.2058816826467"
+                    Point2="0,36.2058816826467"
+                    Point3="-4,36.2058816826467" />
+                  <mssgle:LineSegment
+                    End="-41.285723980593,36.2058816826467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.285723980593,36.2058816826467"
+                    Point2="-45.285723980593,36.2058816826467"
+                    Point3="-45.285723980593,40.2058816826467" />
+                  <mssgle:LineSegment
+                    End="-45.285723980593,64.9117633652934" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-37.8609479277965,41.2058816826467,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
+          TopLeft="351.476190427533,86.4705882138447">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.1904762391334,101.529411786155"
+              Start="0,0"
+              End="10.1904762391334,94.0294117861553">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.9364581051119" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.9364581051119"
+                    Point2="0,50.9364581051119"
+                    Point3="4,50.9364581051119" />
+                  <mssgle:LineSegment
+                    End="6.19047623913337,50.9364581051119" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.19047623913337,50.9364581051119"
+                    Point2="10.1904762391334,50.9364581051119"
+                    Point3="10.1904762391334,54.9364581051119" />
+                  <mssgle:LineSegment
+                    End="10.1904762391334,94.0294117861553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Output 0]"
+          TopLeft="413.333333333333,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="197.45239064726,-63.4117633652934"
+              Start="0,0"
+              End="197.45239064726,-55.9117633652934">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-31.8245643413392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-31.8245643413392"
+                    Point2="0,-35.8245643413392"
+                    Point3="4,-35.8245643413392" />
+                  <mssgle:LineSegment
+                    End="193.45239064726,-35.8245643413392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="193.45239064726,-35.8245643413392"
+                    Point2="197.45239064726,-35.8245643413392"
+                    Point3="197.45239064726,-39.8245643413392" />
+                  <mssgle:LineSegment
+                    End="197.45239064726,-55.9117633652934" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4494,24 +4600,18 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="188,44">
+          TopLeft="78.6666666666667,51">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43,40"
+              EndConnector="0,152"
               Start="0,0"
-              End="43,32.5">
+              End="0,144.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="39,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39,0"
-                    Point2="43,0"
-                    Point3="43,4" />
-                  <mssgle:LineSegment
-                    End="43,32.5" />
+                    End="0,144.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4522,18 +4622,30 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="492.071432165954,231.235294106922">
+          TopLeft="602,239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.176474363334"
+              EndConnector="-47.5,63"
               Start="0,0"
-              End="0,29.676474363334">
+              End="-47.5,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.676474363334" />
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="-4,31.5" />
+                  <mssgle:LineSegment
+                    End="-43.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.5,31.5"
+                    Point2="-47.5,31.5"
+                    Point3="-47.5,35.5" />
+                  <mssgle:LineSegment
+                    End="-47.5,55.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4544,18 +4656,30 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="710.185725044961,232.776473269413">
+          TopLeft="819.714296455286,237.176473269413">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.4000010939207"
+              EndConnector="-13.35714282065,50.000001093921"
               Start="0,0"
-              End="0,28.9000010939207">
+              End="-13.35714282065,42.500001093921">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.9000010939207" />
+                    End="0,21.0000005469605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0000005469605"
+                    Point2="0,25.0000005469605"
+                    Point3="-4,25.0000005469605" />
+                  <mssgle:LineSegment
+                    End="-9.35714282064998,25.0000005469605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.35714282064998,25.0000005469605"
+                    Point2="-13.35714282065,25.0000005469605"
+                    Point3="-13.35714282065,29.0000005469605" />
+                  <mssgle:LineSegment
+                    End="-13.35714282065,42.500001093921" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4566,18 +4690,30 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="309,107.035294106922">
+          TopLeft="125.666666666667,203">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.1428570942002,0"
+              EndConnector="186.1428570942,-116.529411786155"
               Start="0,0"
-              End="56.6428570942002,0">
+              End="186.1428570942,-109.029411786155">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.6428570942002,0" />
+                    End="0,-54.0988724971704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-54.0988724971704"
+                    Point2="0,-58.0988724971704"
+                    Point3="4,-58.0988724971704" />
+                  <mssgle:LineSegment
+                    End="182.1428570942,-58.0988724971704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="182.1428570942,-58.0988724971704"
+                    Point2="186.1428570942,-58.0988724971704"
+                    Point3="186.1428570942,-62.0988724971704" />
+                  <mssgle:LineSegment
+                    End="186.1428570942,-109.029411786155" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4588,132 +4724,38 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Error Output]"
-          TopLeft="233.671430079791,125.6">
+          TopLeft="101,245">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.9294141563164"
+              EndConnector="-8.857139840418,84.529414156316"
               Start="0,0"
-              End="0,37.4294141563164">
+              End="-8.857139840418,77.029414156316">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.4294141563164" />
+                    End="0,38.264707078158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.264707078158"
+                    Point2="0,42.264707078158"
+                    Point3="-4,42.264707078158" />
+                  <mssgle:LineSegment
+                    End="-4.857139840418,42.264707078158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.857139840418,42.264707078158"
+                    Point2="-8.857139840418,42.264707078158"
+                    Point3="-8.857139840418,46.264707078158" />
+                  <mssgle:LineSegment
+                    End="-8.857139840418,77.029414156316" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.08638671875,12.9979102031582,132.1727734375,11.43359375"
+              BoundingBox="-70.514956638959,47.264707078158,132.1727734375,11.43359375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Conditional Split Default Output]"
-          TopLeft="670.885723980593,137.188236634707">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41.028572474693,53.9882366347064"
-              Start="0,0"
-              End="41.028572474693,46.4882366347064">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.92752995625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.92752995625"
-                    Point2="0,21.92752995625"
-                    Point3="4,21.92752995625" />
-                  <mssgle:LineSegment
-                    End="37.028572474693,21.92752995625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.028572474693,21.92752995625"
-                    Point2="41.028572474693,21.92752995625"
-                    Point3="41.028572474693,25.92752995625" />
-                  <mssgle:LineSegment
-                    End="41.028572474693,46.4882366347064" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-50.0996200126535,26.92752995625,141.2278125,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Case 1]"
-          TopLeft="646.485723980593,137.188236634707">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-151.114295433493,52.0470574722154"
-              Start="0,0"
-              End="-151.114295433493,44.5470574722154">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.0235287361077" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.0235287361077"
-                    Point2="0,26.0235287361077"
-                    Point3="-4,26.0235287361077" />
-                  <mssgle:LineSegment
-                    End="-147.114295433493,26.0235287361077" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-147.114295433493,26.0235287361077"
-                    Point2="-151.114295433493,26.0235287361077"
-                    Point3="-151.114295433493,30.0235287361077" />
-                  <mssgle:LineSegment
-                    End="-151.114295433493,44.5470574722154" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-90.7752336542465,31.0235287361077,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
-          TopLeft="436.7428570942,88.4705882138447">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="153.742865864599,-31.5764703522917"
-              Start="0,0"
-              End="153.742865864599,-24.0764703522917">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-11.7882351761458" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-11.7882351761458"
-                    Point2="0,-15.7882351761458"
-                    Point3="4,-15.7882351761458" />
-                  <mssgle:LineSegment
-                    End="149.742865864599,-15.7882351761458" />
-                  <mssgle:CubicBezierSegment
-                    Point1="149.742865864599,-15.7882351761458"
-                    Point2="153.742865864599,-15.7882351761458"
-                    Point3="153.742865864599,-19.7882351761458" />
-                  <mssgle:LineSegment
-                    End="153.742865864599,-24.0764703522917" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4729,6 +4771,14 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

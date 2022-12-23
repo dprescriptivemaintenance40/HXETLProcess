@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>HeatExchenger_ETL</Name>
-    <LastWriteTime>2022-12-09T10:49:52.329249Z</LastWriteTime>
+    <LastWriteTime>2022-12-23T06:02:53.0239857Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>UploadTask.dtsx</Name>
-      <LastWriteTime>2022-12-09T11:03:50.5239443Z</LastWriteTime>
+      <LastWriteTime>2022-12-17T06:32:19.8478686Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ValidationTask.dtsx</Name>
-      <LastWriteTime>2022-12-09T10:37:28.4312415Z</LastWriteTime>
+      <LastWriteTime>2022-12-22T04:25:24.173587Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
