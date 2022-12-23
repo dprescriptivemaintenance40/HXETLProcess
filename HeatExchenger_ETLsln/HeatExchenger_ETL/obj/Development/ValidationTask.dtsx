@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-6EBQLBP\bistd"
   DTS:DTSID="{B184EAE7-B518-4458-ABBA-E5D6924281BE}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="120"
-  DTS:VersionGUID="{A7A2FC2C-25D7-4B17-8CEB-79FC0CE627C2}">
+  DTS:VersionBuild="129"
+  DTS:VersionGUID="{7CC86832-27B9-4C50-85A8-48E585CD1624}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -220,24 +220,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Date]"
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[Date]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[incipient]"
-                      cachedDataType="i1"
-                      cachedName="incipient"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Incipient]"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[incipient]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[change]"
-                      cachedDataType="i1"
-                      cachedName="change"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Change]"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[change]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[range]"
-                      cachedDataType="i1"
-                      cachedName="range"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Range]"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[range]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DCTT1]"
                       cachedDataType="r8"
                       cachedName="DCTT1"
@@ -334,12 +316,24 @@
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Area]"
                       lineageId="Package\Data Flow Task\Aggregate.Outputs[Aggregate Output 1].Columns[DCArea]" />
                     <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[incipient]"
+                      cachedDataType="i1"
+                      cachedName="incipient"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Trend]"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[incipient]" />
+                    <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Diff]"
                       cachedDataType="decimal"
                       cachedName="Diff"
-                      cachedScale="10"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Difference]"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TrendPercentage]"
                       lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[range]"
+                      cachedDataType="i1"
+                      cachedName="range"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[IsSpiked]"
+                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[range]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -420,23 +414,19 @@
                       dataType="r4"
                       name="Area" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Difference]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[IsSpiked]"
+                      dataType="i2"
+                      name="IsSpiked" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Trend]"
+                      dataType="i2"
+                      name="Trend" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TrendPercentage]"
                       dataType="numeric"
-                      name="Difference"
+                      name="TrendPercentage"
                       precision="18"
-                      scale="10" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Range]"
-                      dataType="ui1"
-                      name="Range" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Change]"
-                      dataType="ui1"
-                      name="Change" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Incipient]"
-                      dataType="ui1"
-                      name="Incipient" />
+                      scale="4" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2359,7 +2349,7 @@
                       refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Diff]"
                       cachedDataType="decimal"
                       cachedName="Diff"
-                      cachedScale="10"
+                      cachedScale="4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]"
@@ -2867,10 +2857,6 @@
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Area]"
                       dataType="nText"
                       name="Area" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsZero]"
-                      dataType="bool"
-                      name="IsZero" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3294,16 +3280,13 @@ public class ScriptMain : UserComponent
         if (changecollection.Count < 10)
         {
             changecollection.Add(value);
+            pointer = pointer + 1;
         }
         else
         {
-            changecollection[pointer] = value;
-            if (pointer == 10)
-            {
-                pointer = 0;
-            }
+            changecollection.Clear();
+            changecollection.Add(value);
             pointer = pointer + 1;
-
         }
     }
     public override void Input0_ProcessInputRow(Input0Buffer Row)
@@ -3331,7 +3314,7 @@ public class ScriptMain : UserComponent
         // calculate previousrange
         if(prevrange != 0)
         {
-            changecheck = (short)(range - prevrange);
+            changecheck = (short)(prevrange-range);
         }
         if(changecheck ==2 || changecheck ==-2)
         {
@@ -3342,12 +3325,14 @@ public class ScriptMain : UserComponent
             change = 0;
         }
         short incipientCheck = 0;
+        Add(change);
         //set value
         if (changecollection.Count == 10)
         {
-            incipientCheck = (short)(changecollection.Max<short>() + change);
+            incipientCheck = (short)(changecollection.Max() + change);
+            pointer = 0;
         }
-        Add(change);
+        
         if (incipientCheck == 2)
         {
             incipient = 1;
@@ -3695,7 +3680,7 @@ public class Variables
     <msb:CodeName>SC_1a6b9a7220944cc88039dc5825c84d13</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_1a6b9a7220944cc88039dc5825c84d13</msb:DisplayName>
-    <msb:ProjectId>{EAD0D503-3204-4EB5-8FFC-8C167688D579}</msb:ProjectId>
+    <msb:ProjectId>{7F593063-408D-4EEC-A435-DE074839EFA8}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_1a6b9a7220944cc88039dc5825c84d13.csproj" />
@@ -3707,11 +3692,35 @@ public class Variables
     <msb:File Include="Properties\AssemblyInfo.cs" />
     <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:Breakpoint Include="305235b2294747f483b02e635cd2252f">
+    <msb:Breakpoint Include="9bbcb533825f409398231eb0b94147b4">
       <msb:FileName>main.cs</msb:FileName>
-      <msb:ColumnNumber>5</msb:ColumnNumber>
+      <msb:LineNumber>174</msb:LineNumber>
+      <msb:ColumnNumber>9</msb:ColumnNumber>
       <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>123</msb:LineNumber>
+      <msb:ConditionType>1</msb:ConditionType>
+      <msb:Condition>
+      </msb:Condition>
+      <msb:Language>C#</msb:Language>
+      <msb:HitCountType>1</msb:HitCountType>
+      <msb:HitCountTarget>1</msb:HitCountTarget>
+    </msb:Breakpoint>
+    <msb:Breakpoint Include="de728e8064b4477eb567d92f9be24346">
+      <msb:FileName>main.cs</msb:FileName>
+      <msb:LineNumber>176</msb:LineNumber>
+      <msb:ColumnNumber>13</msb:ColumnNumber>
+      <msb:Enabled>True</msb:Enabled>
+      <msb:ConditionType>1</msb:ConditionType>
+      <msb:Condition>
+      </msb:Condition>
+      <msb:Language>C#</msb:Language>
+      <msb:HitCountType>1</msb:HitCountType>
+      <msb:HitCountTarget>1</msb:HitCountTarget>
+    </msb:Breakpoint>
+    <msb:Breakpoint Include="94e6de655f8f4d0da6c62f744b5cb7cb">
+      <msb:FileName>main.cs</msb:FileName>
+      <msb:ColumnNumber>9</msb:ColumnNumber>
+      <msb:Enabled>True</msb:Enabled>
+      <msb:LineNumber>130</msb:LineNumber>
       <msb:Condition>
       </msb:Condition>
       <msb:ConditionType>1</msb:ConditionType>
@@ -3853,118 +3862,118 @@ namespace SC_1a6b9a7220944cc88039dc5825c84d13.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[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
-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
+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
-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
+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
-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
+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
-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
+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
-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
+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
-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
-AIYAcQeSAA4A2iIAAAAAhgCiBpIADgDiIgAAAACGGH4FBgAOAAIjAAAAAMYATQcXAQ4AJyMAAAAA
-xgFGB/cAEgA6IwAAAADGAVoH9wATADwjAAAAAIYYfgUhARQASyMAAAAAhhh+BSEBFQBaIwAAAACD
-GH4FBgAWAGIjAAAAAJMIYgUnARYAjiMAAAAAkwgkASwBFgCVIwAAAACTCDABMQEWAJ0jAAAAAJYI
-rgY3ARcApCMAAAAAhhh+BQYAFwCsIwAAAACRGIQFPAEXAAAAAQA/AwAAAQB1BwAAAQBbBQAAAgBa
-BgAAAwAjBQAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAAAQA/AwAA
-AQBDAAAAAgDcAAAAAwBbBQAABAAjBQAAAQBbBQAAAQB1BwAAAQDsBgAAAQDsBgAAAQA/AwkAfgUB
-ABEAfgUGABkAfgUKACkAfgUQADEAfgUQADkAfgUQAEEAfgUQAEkAfgUQAFEAfgUQAFkAfgUQAGEA
-fgUQAGkAfgUGALEAfgUGANEAfgUVAOEAfgUGAKEAIAMGAKEAKwMGAAwA9gYhAAwAegAlAAwANAQr
-AOkAbwM9AHkArARDAHkAdgRDAHkAfgUBAHkAigdDAHkAUARMAHkAXwRMAPEAeQdUAOkANwNkAAwA
-fgUGAIEAfgVpAIEAWwVzAIEAWgZ3AIkA5gB7AIEAJQSBAIkAeQOGAIEANASMAIEALAQBAAkBfgUQ
-AIEAcQeSAIEAogaSAKEAfgUGABEBiAaWAKEAbgaeAKkAfgUGACEBygCkACEBfQetALkAfgWzANkA
-fgUGAC4ACwBhAS4AEwBqAS4AGwCJAS4AIwCSAS4AKwC7AS4AMwC7AS4AOwC7AS4AQwCSAS4ASwDB
-AS4AUwC7AS4AWwDYAUMAYwAiAuMAawAiAmEBewAiAqkBcwCJAckBcwCJATIAAwABAAcADQAIAA8A
-AABoAUABAAD7A0UBAABPAEkBAADGA0UBAAC+Bk4BAAAbBEUBAACSAE4BAADYA0UBAACnAE4BAADq
-A0UBAABJA0kBAAALBEUBAABmBVIBAABEAVcBAACyBlwBAgAHAAMAAgAIAAUAAgAJAAcAAgAKAAkA
-AQALAAsAAQAMAA0AAQANAA8AAQAOABEAAQAPABMAAQAQABUAAQARABcAAQASABkAAgAcABsAAgAd
-AB0AAQAeAB0AAgAfAB8AGwAEgAAAAQAAAAAAAAAAAAAAAAAWAAAABAAAAAAAAAAAAAAAuwBWAAAA
-AAAPAAAAAAAAAAAAAADEAAAHAAAAAA8AAAAAAAAAAAAAAMQAJQcAAAAABAAAAAAAAAAAAAAAuwA9
-BAAAAAAEAAAAAAAAAAAAAAC7ABgBAAAAAAAAAAABAAAAzwUAADkAYAAAAAAAAElFbnVtZXJhYmxl
-YDEATGlzdGAxAFNDXzFhNmI5YTcyMjA5NDRjYzg4MDM5ZGM1ODI1Yzg0ZDEzADxNb2R1bGU+AElu
-cHV0SUQAZ2V0X0RDTE1URABtc2NvcmxpYgBTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYwBBZGQA
-ZGVmYXVsdEluc3RhbmNlAHNldF9jaGFuZ2UAc2V0X3JhbmdlAHByZXZyYW5nZQBFbnVtZXJhYmxl
-AFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAElucHV0TmFtZQBHZXREYXRlVGlt
-ZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAFN5c3RlbS5Db3JlAGdldF9D
-dWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFz
-ZQBnZXRfRGF0ZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0
-ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9y
-QnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1h
-cmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlv
-bkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhh
-dGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0
-QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5
-Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRl
-AFBvc3RFeGVjdXRlAFRvU0J5dGUAdmFsdWUAc2V0X0RpZmYAU3lzdGVtLlJ1bnRpbWUuVmVyc2lv
-bmluZwBTdHJpbmcAVG9EZWNpbWFsAEdldERlY2ltYWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFND
-XzFhNmI5YTcyMjA5NDRjYzg4MDM5ZGM1ODI1Yzg0ZDEzLmRsbABnZXRfRENMTVREX0lzTnVsbABz
-ZXRfY2hhbmdlX0lzTnVsbABzZXRfcmFuZ2VfSXNOdWxsAGdldF9EYXRlX0lzTnVsbABzZXRfRGlm
-Zl9Jc051bGwAc2V0X2luY2lwaWVudF9Jc051bGwAU2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0AcmVz
-b3VyY2VNYW4Ab3BfR3JlYXRlclRoYW4Ab3BfTGVzc1RoYW4AU2NyaXB0TWFpbgBvcF9EaXZpc2lv
-bgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBvcF9TdWJ0cmFjdGlv
-bgBTeXN0ZW0uUmVmbGVjdGlvbgBjaGFuZ2Vjb2xsZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNl
-cHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1h
-cABTeXN0ZW0uTGlucQBJbnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdl
-dF9SZXNvdXJjZU1hbmFnZXIAcG9pbnRlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNz
-AFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ18xYTZi
-OWE3MjIwOTQ0Y2M4ODAzOWRjNTgyNWM4NGQxMy5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJj
-ZXMARGVidWdnaW5nTW9kZXMAU0NfMWE2YjlhNzIyMDk0NGNjODgwMzlkYzU4MjVjODRkMTMuUHJv
-cGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVzAFNl
-dHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQA
-c2V0X2luY2lwaWVudABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25l
-bnQAZ2V0X0NvdW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQAQ29udmVydABNaWNyb3Nv
-ZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9j
-ZXNzSW5wdXRSb3cATmV4dFJvdwBNYXgAZ2V0X0Fzc2VtYmx5AG9wX011bHRpcGx5AAAAAICbSQBz
-AE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAA
-dABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0
-AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMA
-QwBfADEAYQA2AGIAOQBhADcAMgAyADAAOQA0ADQAYwBjADgAOAAwADMAOQBkAGMANQA4ADIANQBj
-ADgANABkADEAMwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA/yiy
-Npu2FEWXxqW1rnMPXgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERZQUVEjkBBgMgAAgFIAEBEwAG
-IAIBCBMACgcGET0GBgYRPQYFAAERPQ0IAAIRPRE9ET0HAAICET0RPQsQAQEeABUSfQEeAAMKAQYE
-AAEEBgkgAwESRR0IEkkDBhJFAwYdCAUgARFNCAQgAQIIBSABET0IBSACAQgcAyAAAgcgAgIOEYCN
-BSABHQgICAABEoCREYCVBSAAEoCZByACAQ4SgJkIt3pcVhk04IkIiYRdzYCAzJECBgYCBggGBhUS
-OQEGAwYSFAMGEhgDBhJRAwYSXQMGEmEDBhIgBCABAQYFIAEBEgwEIAARTQQgABE9BCABAQQEIAEB
-AgUgAQERPQkgBAEIDhJFEkkFIAEBElEEAAASXQQAABJhBQABARJhBAAAEiADAAABBCgAEU0DKAAC
-BCgAET0DKAAEBAgAEl0ECAASYQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9u
-VGhyb3dzAQgBAAIAAAAAACgBACNTQ18xYTZiOWE3MjIwOTQ0Y2M4ODAzOWRjNTgyNWM4NGQxMwAA
-BQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDIyAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0
-LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAAALQAAADO
-yu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZl
-cnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5
-MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFE
-UEFEULQAAAAgNwAAAAAAAAAAAAA6NwAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDcAAAAAAAAA
-AAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAA
+CigaAAAKLAQXCysVBh/2cxgAAAooGwAACiwEFQsrAhYLAnsBAAAELAoCewEAAAQHWWgNCRguBQkf
+/jMJAhd9AgAABCsHAhZ9AgAABBYTBQICewIAAAQoAwAABgJ7BAAABG8SAAAKHwozHAJ7BAAABCgB
+AAArAnsCAAAEWGgTBQIWfQMAAAQRBRgzBBcMKwIWDAMGbxEAAAYDBygdAAAKbw8AAAYCB30BAAAE
+AwJ7AgAABCgdAAAKbw0AAAYDCCgdAAAKbwsAAAYqSgJzHgAACn0EAAAEAigVAAAGKioCAwQFKB8A
+AAoqUgJ7IAAACgJ7IQAAChaUbyIAAAoqIgIWKCMAAAoqUgJ7IAAACgJ7IQAACheUbyQAAAoqIgIX
+KCMAAAoqOgIYA4wgAAABKCUAAAoqWgMsCAIYKCYAAAoqcgEAAHBzJwAACno6AhkDjCAAAAEoJQAA
+CipaAywIAhkoJgAACipyAQAAcHMnAAAKejoCGgOMIAAAASglAAAKKloDLAgCGigmAAAKKnIBAABw
+cycAAAp6OgIbA4wPAAABKCUAAAoqWgMsCAIbKCYAAAoqcgEAAHBzJwAACnoeAigoAAAKKh4CKCkA
+AAoqfgIoKgAACgICcxkAAAZ9BQAABAICcxoAAAZ9BgAABCqSBHKeAABwGm8rAAAKLBUCBQIDKCwA
+AAoOBHMGAAAGbxcAAAYqSisHAgNvGAAABgNvEwAABi3xKgYqOgIoLQAACgIDfQcAAAQqOgIoLQAA
+CgIDfQgAAAQqHgIoLQAACiqufgkAAAQtHnKuAABw0AcAAAIoLgAACm8vAAAKczAAAAqACQAABH4J
+AAAEKhp+CgAABCoeAoAKAAAEKhp+CwAABCoeAigxAAAKKi5zIAAABoALAAAEKgBCU0pCAQABAAAA
+AAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAAAsBwAAI34AAJgHAACcBwAAI1N0cmluZ3MAAAAANA8A
+ACABAAAjVVMAVBAAABAAAAAjR1VJRAAAAGQQAAAgAgAAI0Jsb2IAAAAAAAAAAgAAAVcVogkJCQAA
+APoBMwAWAAABAAAAJgAAAAgAAAALAAAAIQAAABYAAAAxAAAAEAAAAAEAAAADAAAADwAAABAAAAAB
+AAAAAQAAAAUAAAABAAAAAQAAAAAAmgMBAAAAAAAGAG4CpAUGAAIDpAUGALoBkQUPABgGAAAGAOcB
+uwQGAFECuwQGADICuwQGAOkCuwQGAI4CuwQGAKcCuwQGAP4BuwQGABkCTgMKAMIC8gAGAA8AXwAG
+AHwDPQQKAFsF8gAOAEwF8gAKABUF8gAGAOkAPQQKAOwG8gAGAKEGPQQGAJ0BkQUGAGwFxAUGAAkF
+lwQSAG0BhAMSAM4BhAMSAEwBggQGAIIBpAUGACMHPQQWAK0ALQUGAAEAXwAGADkDPQQGAN4EPQQG
+AGgDPQQGAPgEPQQGABMBPQQGALgAPQQGAIcHuwQAAAAAOgAAAAAAAQABAAEAEABrBAAAEAABAAEA
+AQAQAD8FAABBAAUABgABABAAzgYAAFEABQAVAAEAEACVBgAAVQAHABkAAQAQAFYGAABVAAgAGgAA
+ABAAywUnBlUACQAbAAABEACFBicGbQALAB8ABgCjAMYABgCSAMYABgB8BckAAQDNBMwABgCVBtMA
+BgBWBtcAAQDcBtsAAQDcBtsAEQBEBN8AEQA8AeMAEQB+AOcAUCAAAAAAxgAgAwYAAQBmIAAAAADG
+ACsDBgABAHAgAAAAAIEAegDrAAEAzCAAAAAAxgBgB/AAAgDnIQAAAACGGIQFBgADAPohAAAAAIYY
+hAViAAMABSIAAAAAhghkAfYABgAaIgAAAACGCPcDiwAGACMiAAAAAIYISwD7AAYAOCIAAAAAhgjC
+A4sABgBBIgAAAACGCMAGAAEGAFAiAAAAAIYIFwQFAQcAZyIAAAAAhgiOAAABCAB2IgAAAACGCNQD
+BQEJAI0iAAAAAIYImQAAAQoAnCIAAAAAhgjmAwUBCwCzIgAAAACGCEUDCgEMAMIiAAAAAIYIBwQF
+AQ0A2SIAAAAAhgB3B4sADgDhIgAAAACGAKgGiwAOAOkiAAAAAIYYhAUGAA4ACSMAAAAAxgBTBxAB
+DgAuIwAAAADGAUwH8AASAEEjAAAAAMYBYAfwABMAQyMAAAAAhhiEBRoBFABSIwAAAACGGIQFGgEV
+AGEjAAAAAIMYhAUGABYAaSMAAAAAkwhoBSABFgCVIwAAAACTCCQBJQEWAJwjAAAAAJMIMAEqARYA
+pCMAAAAAlgi0BjABFwCrIwAAAACGGIQFBgAXALMjAAAAAJEYigU1ARcAAAABAD8DAAABAHsHAAAB
+AGEFAAACAGAGAAADACMFAAABAD8DAAABAD8DAAABAD8DAAABAD8DAAABAD8DAAABAD8DAAABAD8D
+AAABAD8DAAABAEMAAAACANwAAAADAGEFAAAEACMFAAABAGEFAAABAHsHAAABAPIGAAABAPIGAAAB
+AD8DCQCEBQEAEQCEBQYAGQCEBQoAKQCEBRAAMQCEBRAAOQCEBRAAQQCEBRAASQCEBRAAUQCEBRAA
+WQCEBRAAYQCEBRAAaQCEBQYAsQCEBQYA0QCEBRUA4QCEBQYAoQAgAwYAoQArAwYADAD8BiEADAB6
+ACUADAA5BQYA6QBvAzYAeQCsBDwAeQB2BDwAeQCEBQEAeQCQBzwAeQBQBEUAeQBfBEUA8QB/B00A
+6QA3A10ADACEBQYAgQCEBWIAgQBhBWwAgQBgBnAAiQDmAHQAgQAlBHoAiQB5A38AgQA0BIUAgQAs
+BAEACQGEBRAAgQB3B4sAgQCoBosAoQCEBQYAEQGOBo8AoQB0BpcAqQCEBQYAIQHKAJ0AIQGDB6YA
+uQCEBawA2QCEBQYALgALAFoBLgATAGMBLgAbAIIBLgAjAIsBLgArALQBLgAzALQBLgA7ALQBLgBD
+AIsBLgBLALoBLgBTALQBLgBbANEBQwBjABsC4wBrABsCYQF7ABsCqQFzAIIByQFzAIIBKwADAAEA
+BwANAAgADwAAAGgBOQEAAPsDPgEAAE8AQgEAAMYDPgEAAMQGRwEAABsEPgEAAJIARwEAANgDPgEA
+AKcARwEAAOoDPgEAAEkDQgEAAAsEPgEAAGwFSwEAAEQBUAEAALgGVQECAAcAAwACAAgABQACAAkA
+BwACAAoACQABAAsACwABAAwADQABAA0ADwABAA4AEQABAA8AEwABABAAFQABABEAFwABABIAGQAC
+ABwAGwACAB0AHQABAB4AHQACAB8AHwAbAASAAAABAAAAAAAAAAAAAAAAABYAAAAEAAAAAAAAAAAA
+AAC0AFYAAAAAAA8AAAAAAAAAAAAAAL0ABgcAAAAADwAAAAAAAAAAAAAAvQArBwAAAAAEAAAAAAAA
+AAAAAAC0AD0EAAAAAAQAAAAAAAAAAAAAALQAGAEAAAAAAAAAAAEAAADVBQAAOQBZAAAAAAAASUVu
+dW1lcmFibGVgMQBMaXN0YDEAU0NfMWE2YjlhNzIyMDk0NGNjODgwMzlkYzU4MjVjODRkMTMAPE1v
+ZHVsZT4ASW5wdXRJRABnZXRfRENMTVREAG1zY29ybGliAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5l
+cmljAEFkZABkZWZhdWx0SW5zdGFuY2UAc2V0X2NoYW5nZQBzZXRfcmFuZ2UAcHJldnJhbmdlAEVu
+dW1lcmFibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAEdl
+dERhdGVUaW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAFR5cGUAU3lzdGVtLkNv
+cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAEFwcGxpY2F0aW9uU2V0
+dGluZ3NCYXNlAGdldF9EYXRlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVk
+QXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0
+ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJs
+eVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25m
+aWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRp
+b25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlD
+b3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUA
+QXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAFBy
+ZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAVG9TQnl0ZQB2YWx1ZQBzZXRfRGlmZgBTeXN0ZW0uUnVudGlt
+ZS5WZXJzaW9uaW5nAFN0cmluZwBUb0RlY2ltYWwAR2V0RGVjaW1hbABTeXN0ZW0uQ29tcG9uZW50
+TW9kZWwAU0NfMWE2YjlhNzIyMDk0NGNjODgwMzlkYzU4MjVjODRkMTMuZGxsAGdldF9EQ0xNVERf
+SXNOdWxsAHNldF9jaGFuZ2VfSXNOdWxsAHNldF9yYW5nZV9Jc051bGwAZ2V0X0RhdGVfSXNOdWxs
+AHNldF9EaWZmX0lzTnVsbABzZXRfaW5jaXBpZW50X0lzTnVsbABTZXROdWxsAHNldF9JdGVtAFN5
+c3RlbQByZXNvdXJjZU1hbgBvcF9HcmVhdGVyVGhhbgBvcF9MZXNzVGhhbgBTY3JpcHRNYWluAG9w
+X0RpdmlzaW9uAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAG9wX1N1
+YnRyYWN0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAGNoYW5nZWNvbGxlY3Rpb24ASW52YWxpZE9wZXJh
+dGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAA
+T3V0cHV0TWFwAFN5c3RlbS5MaW5xAENsZWFyAElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBT
+Y3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBwb2ludGVyAC5jdG9yAC5jY3RvcgBTeXN0
+ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVz
+b3VyY2VzAFNDXzFhNmI5YTcyMjA5NDRjYzg4MDM5ZGM1ODI1Yzg0ZDEzLlByb3BlcnRpZXMuUmVz
+b3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ18xYTZiOWE3MjIwOTQ0Y2M4ODAzOWRj
+NTgyNWM4NGQxMy5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1bW5JbmRleGVzAEdldENv
+bHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rpb25zAE9iamVjdABFbmRPZlJvd3Nl
+dABnZXRfRGVmYXVsdABzZXRfaW5jaXBpZW50AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9uZW50
+AFNjcmlwdENvbXBvbmVudABnZXRfQ291bnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABD
+b252ZXJ0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AElucHV0MF9Qcm9jZXNzSW5w
+dXQASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AE1heABnZXRfQXNzZW1ibHkAb3BfTXVs
+dGlwbHkAAICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIA
+ZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1
+AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAA
+dQB0ACAAMAAAcVMAQwBfADEAYQA2AGIAOQBhADcAMgAyADAAOQA0ADQAYwBjADgAOAAwADMAOQBk
+AGMANQA4ADIANQBjADgANABkADEAMwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUA
+cgBjAGUAcwAALhZDX7AFo0OozTfQDG5FlAAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERZQUVEjkB
+BgMgAAgFIAEBEwAKBwYRPQYGBhE9BgUAARE9DQgAAhE9ET0RPQcAAgIRPRE9CxABAR4AFRJ9AR4A
+AwoBBgQAAQQGCSADARJFHQgSSQMGEkUDBh0IBSABEU0IBCABAggFIAERPQgFIAIBCBwDIAACByAC
+Ag4RgI0FIAEdCAgIAAESgJERgJUFIAASgJkHIAIBDhKAmQi3elxWGTTgiQiJhF3NgIDMkQIGBgIG
+CAYGFRI5AQYDBhIUAwYSGAMGElEDBhJdAwYSYQMGEiAEIAEBBgUgAQESDAQgABFNBCAAET0EIAEB
+BAQgAQECBSABARE9CSAEAQgOEkUSSQUgAQESUQQAABJdBAAAEmEFAAEBEmEEAAASIAMAAAEEKAAR
+TQMoAAIEKAARPQMoAAQECAASXQQIABJhBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNl
+cHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NDXzFhNmI5YTcyMjA5NDRjYzg4MDM5ZGM1ODI1Yzg0
+ZDEzAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMjIAAEkBABouTkVURnJhbWV3b3JrLFZlcnNp
+b249djQuNwEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43BAEAAAC0
+AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGli
+LCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVj
+NTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAA
+AFBBRFBBRFC0AAAAJDcAAAAAAAAAAAAAPjcAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA3AAAA
+AAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3994,7 +4003,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAEw3AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAFA3AAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4033,15 +4042,39 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="BreakpointCollection"
                   typeConverter="NOTBROWSABLE">
                   <arrayElements
-                    arrayElementCount="1">
+                    arrayElementCount="3">
                     <arrayElement
                       dataType="System.String">&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
 &lt;SOAP-ENV:Body&gt;
 &lt;a1:ScriptBreakpointInfo id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Microsoft.SqlServer.VSTAHosting/Microsoft.SqlServer.VSTAScriptingLib%2C%20Version%3D15.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D89845dcd8080cc91"&gt;
 &lt;Enabled&gt;true&lt;/Enabled&gt;
 &lt;File id="ref-3"&gt;main.cs&lt;/File&gt;
-&lt;FileLine&gt;123&lt;/FileLine&gt;
-&lt;FileColumn&gt;5&lt;/FileColumn&gt;
+&lt;FileLine&gt;174&lt;/FileLine&gt;
+&lt;FileColumn&gt;9&lt;/FileColumn&gt;
+&lt;/a1:ScriptBreakpointInfo&gt;
+&lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</arrayElement>
+                    <arrayElement
+                      dataType="System.String">&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+&lt;SOAP-ENV:Body&gt;
+&lt;a1:ScriptBreakpointInfo id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Microsoft.SqlServer.VSTAHosting/Microsoft.SqlServer.VSTAScriptingLib%2C%20Version%3D15.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D89845dcd8080cc91"&gt;
+&lt;Enabled&gt;true&lt;/Enabled&gt;
+&lt;File id="ref-3"&gt;main.cs&lt;/File&gt;
+&lt;FileLine&gt;176&lt;/FileLine&gt;
+&lt;FileColumn&gt;13&lt;/FileColumn&gt;
+&lt;/a1:ScriptBreakpointInfo&gt;
+&lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</arrayElement>
+                    <arrayElement
+                      dataType="System.String">&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+&lt;SOAP-ENV:Body&gt;
+&lt;a1:ScriptBreakpointInfo id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Microsoft.SqlServer.VSTAHosting/Microsoft.SqlServer.VSTAScriptingLib%2C%20Version%3D15.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D89845dcd8080cc91"&gt;
+&lt;Enabled&gt;true&lt;/Enabled&gt;
+&lt;File id="ref-3"&gt;main.cs&lt;/File&gt;
+&lt;FileLine&gt;130&lt;/FileLine&gt;
+&lt;FileColumn&gt;9&lt;/FileColumn&gt;
 &lt;/a1:ScriptBreakpointInfo&gt;
 &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
@@ -4103,7 +4136,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       dataType="decimal"
                       lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[Diff]"
                       name="Diff"
-                      scale="10" />
+                      scale="4" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -4354,16 +4387,16 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,55"
-          Size="205,98"
+          PanelSize="204.8,55.2"
+          Size="204.8,97.6"
           Id="Package\Assign Values to Variable"
           TopLeft="44,132" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
           TopLeft="67,267" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="66,47" />
         <EdgeLayout
@@ -4419,43 +4452,43 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="118,42"
+          Size="118.4,41.6"
           Id="Package\Data Flow Task\DC Error"
           TopLeft="33.142860159582,329.529414156316" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Data Flow Task\Conditional Split"
           TopLeft="570.285723980593,82.5882366347066" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Data Flow Task\Derived Column 1"
           TopLeft="738.714296455286,195.176473269413" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Data Flow Task\Script Component"
-          TopLeft="306,188" />
+          TopLeft="306,184.176470534612" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="23,203" />
         <NodeLayout
-          Size="127,42"
+          Size="127.2,41.6"
           Id="Package\Data Flow Task\Aggregate"
           TopLeft="268.1428570942,44.4705882138447" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="6,9" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task\Validation Error"
           TopLeft="730.857153634636,287.176474363334" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Data Flow Task\ADO NET Destination"
-          TopLeft="465,302" />
+          TopLeft="464.28571427355,301.235294106922" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="525,197" />
         <EdgeLayout
@@ -4490,7 +4523,7 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-2.64962001265354,29.3304134783456,141.2278125,11.658203125"
+              BoundingBox="-2.64962001265351,29.3304134783456,141.2278125,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4532,30 +4565,30 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Aggregate Output 1]"
-          TopLeft="351.476190427533,86.4705882138447">
+          TopLeft="351.609523760867,86.0705882138447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.1904762391334,101.529411786155"
+              EndConnector="10.1238095724666,98.105882320767"
               Start="0,0"
-              End="10.1904762391334,94.0294117861553">
+              End="10.1238095724666,90.605882320767">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.9364581051119" />
+                    End="0,45.2184443583245" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.9364581051119"
-                    Point2="0,50.9364581051119"
-                    Point3="4,50.9364581051119" />
+                    Point1="0,45.2184443583245"
+                    Point2="0,49.2184443583245"
+                    Point3="4,49.2184443583245" />
                   <mssgle:LineSegment
-                    End="6.19047623913337,50.9364581051119" />
+                    End="6.1238095724666,49.2184443583245" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.19047623913337,50.9364581051119"
-                    Point2="10.1904762391334,50.9364581051119"
-                    Point3="10.1904762391334,54.9364581051119" />
+                    Point1="6.1238095724666,49.2184443583245"
+                    Point2="10.1238095724666,49.2184443583245"
+                    Point3="10.1238095724666,53.2184443583245" />
                   <mssgle:LineSegment
-                    End="10.1904762391334,94.0294117861553" />
+                    End="10.1238095724666,90.605882320767" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4566,30 +4599,30 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output 0]"
-          TopLeft="413.333333333333,188">
+          TopLeft="413.466666666667,184.176470534612">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="197.45239064726,-63.4117633652934"
+              EndConnector="197.219057313926,-59.9882338999051"
               Start="0,0"
-              End="197.45239064726,-55.9117633652934">
+              End="197.219057313926,-52.4882338999051">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-31.8245643413392" />
+                    End="0,-29.8881078066192" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-31.8245643413392"
-                    Point2="0,-35.8245643413392"
-                    Point3="4,-35.8245643413392" />
+                    Point1="0,-29.8881078066192"
+                    Point2="0,-33.8881078066192"
+                    Point3="4,-33.8881078066192" />
                   <mssgle:LineSegment
-                    End="193.45239064726,-35.8245643413392" />
+                    End="193.219057313926,-33.8881078066192" />
                   <mssgle:CubicBezierSegment
-                    Point1="193.45239064726,-35.8245643413392"
-                    Point2="197.45239064726,-35.8245643413392"
-                    Point3="197.45239064726,-39.8245643413392" />
+                    Point1="193.219057313926,-33.8881078066192"
+                    Point2="197.219057313926,-33.8881078066192"
+                    Point3="197.219057313926,-37.8881078066192" />
                   <mssgle:LineSegment
-                    End="197.45239064726,-55.9117633652934" />
+                    End="197.219057313926,-52.4882338999051" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4622,30 +4655,30 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="602,239">
+          TopLeft="601.8,238.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-47.5,63"
+              EndConnector="-47.91428572645,62.6352941069224"
               Start="0,0"
-              End="-47.5,55.5">
+              End="-47.91428572645,55.1352941069224">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,27.3176470534612" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="-4,31.5" />
+                    Point1="0,27.3176470534612"
+                    Point2="0,31.3176470534612"
+                    Point3="-4,31.3176470534612" />
                   <mssgle:LineSegment
-                    End="-43.5,31.5" />
+                    End="-43.91428572645,31.3176470534612" />
                   <mssgle:CubicBezierSegment
-                    Point1="-43.5,31.5"
-                    Point2="-47.5,31.5"
-                    Point3="-47.5,35.5" />
+                    Point1="-43.91428572645,31.3176470534612"
+                    Point2="-47.91428572645,31.3176470534612"
+                    Point3="-47.91428572645,35.3176470534612" />
                   <mssgle:LineSegment
-                    End="-47.5,55.5" />
+                    End="-47.91428572645,55.1352941069224" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

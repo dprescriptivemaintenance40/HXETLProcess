@@ -12,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="D:\Heat Exchenger\HXData.csv">
+      DTS:ConnectionString="F:\DPM\Heat Exchanger\HXData.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Date"
-          DTS:DTSID="{7D3D8940-5754-4275-8B22-F8EFE98589BD}"
+          DTS:DTSID="{86D8CE53-2941-4630-88CA-810C71BFCE5C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Temperature Tube Inlet (TT1)"
-          DTS:DTSID="{64B0A6AC-6402-4EAD-B8FF-FE2BEBF6A14C}"
+          DTS:DTSID="{4F9F18BF-BFD1-437B-B3E2-D0B414689181}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Temperature Tube Outlet (TT2)"
-          DTS:DTSID="{C96AC1A0-E092-482A-8EA0-1ABB3C5DC392}"
+          DTS:DTSID="{F1CE977F-4F03-4884-B8A8-99664B6A10E9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Temperature Shell Inlet (TS1)"
-          DTS:DTSID="{FCEF1AE1-5F92-4EFF-B423-68C55D76105C}"
+          DTS:DTSID="{A70578D7-4E3D-431A-B659-5E9E56D996B5}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Temperature Shell Outlet (TS2)"
-          DTS:DTSID="{1F16F037-905C-4D0C-88F6-915801DCCD95}"
+          DTS:DTSID="{134B8096-8504-406F-8FBC-3C7B80F7D331}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Flow Tube Inlet (FT1)"
-          DTS:DTSID="{EA85F2F1-DA34-414C-B3D9-1E6C1FF4F0D2}"
+          DTS:DTSID="{75C72BC4-7245-404D-A344-17A2ADD9E260}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Flow Tube Outlet (FT2)"
-          DTS:DTSID="{24094D33-A9D7-47B3-9EB5-99E3B3F8DD4B}"
+          DTS:DTSID="{BCF092ED-9255-4AD3-A256-88DA78104778}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Pressure Tube Inlet (PT1)"
-          DTS:DTSID="{0BB1E5C1-1595-4126-9F22-574E6D5E399A}"
+          DTS:DTSID="{E573C8CF-DC6D-4882-9229-A66618D83B37}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Pressure Tube Outlet (PT2)"
-          DTS:DTSID="{BA5E02D4-84AD-47E5-9D36-1799CA990847}"
+          DTS:DTSID="{7BE058B1-743C-4580-97A9-DB182A21B6F0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Pressure Shell Inlet (PS1)"
-          DTS:DTSID="{AB9B1993-CC44-45C1-A39D-048E1007F33E}"
+          DTS:DTSID="{634F1079-A0BD-4EF5-8AAA-D1F57D367DE3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -111,7 +111,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Pressure Shell Outlet(PS2)"
-          DTS:DTSID="{77E3AA13-8751-4AB9-9C3E-DDF0A6B5A3A9}"
+          DTS:DTSID="{0CF4192A-A367-42AE-9B38-AA6E63A62CFE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -120,7 +120,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Mass"
-          DTS:DTSID="{DA9D9E7D-AF77-49AC-A4B9-BE9765F289F4}"
+          DTS:DTSID="{FCDA9774-3518-4491-BF37-948F979A2C1A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -129,7 +129,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Specific heat"
-          DTS:DTSID="{8B44EDC6-34CB-4907-98D2-35949D1619AA}"
+          DTS:DTSID="{6B535E89-2BA2-4AF9-ABAB-D9E6E244A23E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -138,7 +138,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Heat Transfer Coefficient"
-          DTS:DTSID="{4C70D2C7-84E0-4058-A662-4CC0BA761EC5}"
+          DTS:DTSID="{51B2C963-A101-4996-9B14-A2F528C6075E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -147,7 +147,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Heat Energy"
-          DTS:DTSID="{44F1D91E-1B51-4297-99EC-C436019FDCEA}"
+          DTS:DTSID="{73A38220-C5F8-45A9-B29E-C1CE7C0D0E72}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -156,7 +156,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="LMTD (Log Mean Temp Diff)"
-          DTS:DTSID="{2A92C157-D40B-4D01-8217-D6118F01F1EC}"
+          DTS:DTSID="{6384BB2E-724B-4FFD-8BE6-CC29206B759F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -165,7 +165,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Area estimate of the heat exchanger"
-          DTS:DTSID="{C9307B92-B797-4F8C-8B9F-3684B5979C3B}"
+          DTS:DTSID="{94111208-0087-4558-B228-9AE157F7C9C9}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

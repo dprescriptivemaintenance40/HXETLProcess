@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-6EBQLBP\bistd"
   DTS:DTSID="{5DF04C14-2D0F-45E8-B95A-9098FF7CCA51}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{0FCFAE8E-508F-4E59-B251-E1D19F7817BE}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{A08E0349-588E-401A-A84A-7BAACEEFE6A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\PredictionTask"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C0F2F16B-15FF-4016-9895-64BCD72FAE37}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -38,6 +39,7 @@
       DTS:refId="Package\ProcessingTask"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{044CE72C-06CB-4C12-9524-2256057DA59A}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -55,6 +57,7 @@
       DTS:refId="Package\UploadTask"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{939BCF58-3F39-424C-900A-5CD304A5CCC7}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -125,19 +128,19 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147,42"
+          Size="147.2,41.6"
           Id="Package\PredictionTask"
           TopLeft="188,322" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\ProcessingTask"
           TopLeft="190,218" />
         <NodeLayout
-          Size="134,42"
+          Size="134.4,41.6"
           Id="Package\UploadTask"
           TopLeft="197.7142856413,45.7058826854072" />
         <NodeLayout
-          Size="147,42"
+          Size="147.2,41.6"
           Id="Package\ValidationTask"
           TopLeft="192,132" />
         <EdgeLayout

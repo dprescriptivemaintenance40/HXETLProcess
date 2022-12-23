@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-6EBQLBP\bistd"
   DTS:DTSID="{AFCC77A2-5FEC-4AFB-9F47-CEF414035FA5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{1DE93428-D7E2-4139-AE1E-216981134C37}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{3003FC78-3D43-4FEB-82E7-BEB1C3203E2A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -203,7 +203,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\Heat Exchanger\HXData.csv">
+          DTS:ConnectionString="F:\DPM\Heat Exchanger\HXData.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -212,7 +212,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{E51F6840-55D3-41B0-A0FD-9BCF3B7FE541}"
+              DTS:DTSID="{2291F417-2029-404C-BDC2-A2E04CFC6076}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Tube Inlet (TT1)"
-              DTS:DTSID="{DC2C1788-C54A-46EE-8EF0-F8F959B9D416}"
+              DTS:DTSID="{91973696-90B0-4F7B-A9D8-069E039C1DB5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -230,7 +230,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Tube Outlet (TT2)"
-              DTS:DTSID="{190B0869-CB76-462B-AD44-6A688E4A7808}"
+              DTS:DTSID="{919A3F3B-58BE-4D0C-9111-DE5E472FF20C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -239,7 +239,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Shell Inlet (TS1)"
-              DTS:DTSID="{47F25F44-121B-4F21-9384-7D5CC98A4388}"
+              DTS:DTSID="{F5797D8A-E992-4363-94D1-47B9F3561678}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -248,7 +248,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Shell Outlet (TS2)"
-              DTS:DTSID="{C9B0033A-A0C3-4776-BB18-DBC1B74DE2BD}"
+              DTS:DTSID="{21E27ACB-E82C-4A13-893A-B3D7A3DB08BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -257,7 +257,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Flow Tube Inlet (FT1)"
-              DTS:DTSID="{7BABED55-467A-4473-9DCB-A855A2098471}"
+              DTS:DTSID="{B1D1EDC6-70A2-4592-BD25-323BC3EF5066}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -266,7 +266,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Flow Tube Outlet (FT2)"
-              DTS:DTSID="{648EA9A1-D748-4EF8-B224-6BED55375BC2}"
+              DTS:DTSID="{2BD62B8A-57EF-4FBD-A5A1-075BBE6012BF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -275,7 +275,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Tube Inlet (PT1)"
-              DTS:DTSID="{93565CCC-FF11-4A87-AC4C-389889D20F6E}"
+              DTS:DTSID="{66892600-6C2E-42FE-B03E-60C74C57B39A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -284,7 +284,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Tube Outlet (PT2)"
-              DTS:DTSID="{8148B4A4-6F17-429E-A30D-0A761E3FD309}"
+              DTS:DTSID="{3BE42913-16CD-41BB-8957-944E888E314F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -293,7 +293,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Shell Inlet (PS1)"
-              DTS:DTSID="{A72CE6F9-C5D7-4AA2-BD7A-CB2E6BB473A2}"
+              DTS:DTSID="{A91D9C98-49D3-4172-99B8-5E5D901C6B39}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -302,7 +302,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Shell Outlet(PS2)"
-              DTS:DTSID="{FDA138EC-AA9E-4DBF-9159-9D2B7677E911}"
+              DTS:DTSID="{BFD53571-93E7-460B-BDD1-4A6A2DA54296}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -311,7 +311,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Mass"
-              DTS:DTSID="{B3A81E96-9DF1-4539-8643-576F932E5985}"
+              DTS:DTSID="{6052038D-E99F-47CE-8841-641F99D88B9B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -320,7 +320,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Specific heat"
-              DTS:DTSID="{4C163603-7B14-460D-BA33-39DC15D458F3}"
+              DTS:DTSID="{366B044F-898A-4B25-8FD8-15DDCBD581D8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -329,7 +329,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Heat Transfer Coefficient"
-              DTS:DTSID="{790AA914-F7D0-4E74-B1A7-F5B6D3B64080}"
+              DTS:DTSID="{62BCC4BE-6FAC-42C7-82C4-AD183A59A4F6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -338,7 +338,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Heat Energy"
-              DTS:DTSID="{DFB394FE-713A-4665-9813-30CF07F6C144}"
+              DTS:DTSID="{8F36E489-7265-4BAB-A55C-AED49EB0301C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -347,7 +347,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LMTD (Log Mean Temp Diff)"
-              DTS:DTSID="{DA47C906-E67F-4519-83C4-0DC192FD72CD}"
+              DTS:DTSID="{91C933D5-AAAE-4026-875D-BDE881F6A47F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -356,7 +356,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Area estimate of the heat exchanger"
-              DTS:DTSID="{0CE01F4B-A3D1-472D-9CF1-75CCE33354F8}"
+              DTS:DTSID="{35ABAB46-9220-4188-9100-5DBCDA030EA6}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2644,18 +2644,18 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
           TopLeft="115,311" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="86,44" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="214,55"
-          Size="214,98"
+          PanelSize="214.4,55.2"
+          Size="214.4,97.6"
           Id="Package\Foreach Loop Container"
           TopLeft="63,137" />
         <EdgeLayout
@@ -2723,23 +2723,23 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Data Flow Task\OLE DB Command"
           TopLeft="397.428576732168,281.529416161838" />
         <NodeLayout
-          Size="146,42"
+          Size="145.6,41.6"
           Id="Package\Data Flow Task\Update IsZero"
           TopLeft="407,366" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="275,191.235294106922" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="58,13" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="173,98" />
         <EdgeLayout

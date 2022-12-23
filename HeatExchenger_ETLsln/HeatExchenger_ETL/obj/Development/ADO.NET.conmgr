@@ -5,6 +5,6 @@
   DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=DESKTOP-6EBQLBP;Initial Catalog=DPM;Integrated Security=True;Application Name=SSIS-HeatExchenger_ETL-{8D7ECAB1-97A5-44A1-8E97-867774386121}DESKTOP-6EBQLBP.DPM;" />
+      DTS:ConnectionString="Data Source=DESKTOP-CGG65T8;Initial Catalog=DPM;Integrated Security=True;Application Name=SSIS-HeatExchenger_ETL-{8D7ECAB1-97A5-44A1-8E97-867774386121}DESKTOP-6EBQLBP.DPM;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
