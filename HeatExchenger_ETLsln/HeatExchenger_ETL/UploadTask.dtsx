@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{3003FC78-3D43-4FEB-82E7-BEB1C3203E2A}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{77C2BA84-4D32-45EF-87B4-3078915C54B3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2032,7 +2032,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[HXStagingTables] VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[HXStagingTables] VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2178,12 +2178,6 @@
                       cachedName="DCArea estimate of the heat exchanger"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCArea estimate of the heat exchanger]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[IsZero]"
-                      cachedDataType="bool"
-                      cachedName="IsZero"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[IsZero]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2386,17 +2380,6 @@
                           name="DBParamInfoFlags">193</property>
                       </properties>
                     </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                      dataType="bool"
-                      name="Param_18">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">193</property>
-                      </properties>
-                    </externalMetadataColumn>
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2432,82 +2415,6 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Data Flow Task\Update IsZero"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="Update IsZero"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update HXStagingTables set IsZero='1'
-where  FT1='0' or  FT2='0'</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Update IsZero.Connections[OleDbConnection]"
-                  connectionManagerID="{2D18945F-6FAB-4067-935A-FE64A16261F3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-CGG65T8.DPM1]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Update IsZero.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <externalMetadataColumns
-                    isUsed="True" />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Update IsZero.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Data Flow Task\Update IsZero.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Update IsZero.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Data Flow Task\Update IsZero.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Update IsZero.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Update IsZero.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Update IsZero.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Update IsZero.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
@@ -2525,11 +2432,6 @@ where  FT1='0' or  FT2='0'</property>
               endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Command Output]"
-              endId="Package\Data Flow Task\Update IsZero.Inputs[OLE DB Command Input]"
-              name="OLE DB Command Output"
-              startId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2721,15 +2623,11 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\Data Flow Task\OLE DB Command"
           TopLeft="397.428576732168,281.529416161838" />
-        <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\Data Flow Task\Update IsZero"
-          TopLeft="407,366" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Data Flow Task\Derived Column"
@@ -2768,28 +2666,6 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
                     Point3="101,29.617647053461" />
                   <mssgle:LineSegment
                     End="101,43.735294106922" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="480.214288366084,323.529416161838">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.470583838162"
-              Start="0,0"
-              End="0,34.970583838162">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.970583838162" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
