@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-6EBQLBP\bistd"
   DTS:DTSID="{AFCC77A2-5FEC-4AFB-9F47-CEF414035FA5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="80"
-  DTS:VersionGUID="{77C2BA84-4D32-45EF-87B4-3078915C54B3}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{9B6DB5DA-2347-46FC-AEDF-B32D573F2FB1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -203,7 +203,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="F:\DPM\Heat Exchanger\HXData.csv">
+          DTS:ConnectionString="D:\Heat Exchanger\HXData.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -212,7 +212,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{2291F417-2029-404C-BDC2-A2E04CFC6076}"
+              DTS:DTSID="{B631F143-40B5-4DCB-AC46-9578C52FF921}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Tube Inlet (TT1)"
-              DTS:DTSID="{91973696-90B0-4F7B-A9D8-069E039C1DB5}"
+              DTS:DTSID="{02F15F0D-77F0-45A1-BD89-ED26BAA57CFE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -230,7 +230,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Tube Outlet (TT2)"
-              DTS:DTSID="{919A3F3B-58BE-4D0C-9111-DE5E472FF20C}"
+              DTS:DTSID="{DBB40344-41E7-413B-8E3B-E0F1A85552DE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -239,7 +239,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Shell Inlet (TS1)"
-              DTS:DTSID="{F5797D8A-E992-4363-94D1-47B9F3561678}"
+              DTS:DTSID="{97EC3C29-BFEC-423A-B1DF-C55D512DA43F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -248,7 +248,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Temperature Shell Outlet (TS2)"
-              DTS:DTSID="{21E27ACB-E82C-4A13-893A-B3D7A3DB08BD}"
+              DTS:DTSID="{65D65AAC-09BE-4ACF-B959-3396D50070E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shell Diff Temp"
+              DTS:DTSID="{AF2518BE-5C88-4B64-AC8E-613C4361EA01}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -257,7 +266,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Flow Tube Inlet (FT1)"
-              DTS:DTSID="{B1D1EDC6-70A2-4592-BD25-323BC3EF5066}"
+              DTS:DTSID="{124DE153-88F1-48EA-9824-4F238C9C1C9D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -266,7 +275,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Flow Tube Outlet (FT2)"
-              DTS:DTSID="{2BD62B8A-57EF-4FBD-A5A1-075BBE6012BF}"
+              DTS:DTSID="{9E1CE1B9-FF31-47A0-9F7A-63E39729589C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -275,7 +284,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Tube Inlet (PT1)"
-              DTS:DTSID="{66892600-6C2E-42FE-B03E-60C74C57B39A}"
+              DTS:DTSID="{305F996F-AC9A-4C36-BEA7-D9FD2981C3BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -284,7 +293,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Tube Outlet (PT2)"
-              DTS:DTSID="{3BE42913-16CD-41BB-8957-944E888E314F}"
+              DTS:DTSID="{1D839C12-C2AA-4F3E-A2F9-E8FADE9096C2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -293,7 +302,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Shell Inlet (PS1)"
-              DTS:DTSID="{A91D9C98-49D3-4172-99B8-5E5D901C6B39}"
+              DTS:DTSID="{498BEF62-3A70-4A5D-8CB1-7BB40CC22316}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -302,7 +311,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pressure Shell Outlet(PS2)"
-              DTS:DTSID="{BFD53571-93E7-460B-BDD1-4A6A2DA54296}"
+              DTS:DTSID="{F37AFBC2-9993-4E86-9094-77AE979B2F4F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -311,7 +320,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Mass"
-              DTS:DTSID="{6052038D-E99F-47CE-8841-641F99D88B9B}"
+              DTS:DTSID="{DEB220B6-374F-428C-A4BC-9996E242CE0E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -320,7 +329,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Specific heat"
-              DTS:DTSID="{366B044F-898A-4B25-8FD8-15DDCBD581D8}"
+              DTS:DTSID="{B9366518-7325-4DCD-AA3A-DBBEEB3D8CDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -329,7 +338,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Heat Transfer Coefficient"
-              DTS:DTSID="{62BCC4BE-6FAC-42C7-82C4-AD183A59A4F6}"
+              DTS:DTSID="{A54A08E8-56F5-416C-8112-D2C7A8824B35}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -338,7 +347,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Heat Energy"
-              DTS:DTSID="{8F36E489-7265-4BAB-A55C-AED49EB0301C}"
+              DTS:DTSID="{C7E35C62-8273-4E19-AD8F-B1201F9DDE16}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -347,7 +356,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LMTD (Log Mean Temp Diff)"
-              DTS:DTSID="{91C933D5-AAAE-4026-875D-BDE881F6A47F}"
+              DTS:DTSID="{A5DCB4F7-2C57-4849-9063-05718E1EAC5C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -356,7 +365,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Area estimate of the heat exchanger"
-              DTS:DTSID="{35ABAB46-9220-4188-9100-5DBCDA030EA6}"
+              DTS:DTSID="{28138E4D-DA06-40E4-9E49-283F8D0E6B75}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -575,6 +584,13 @@
                       cachedLength="50"
                       cachedName="Date"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Shell Diff Temp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Shell Diff Temp"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shell Diff Temp]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -936,6 +952,27 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCShell Diff Temp]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCShell Diff Temp]"
+                      name="DCShell Diff Temp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shell Diff Temp]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1387,6 +1424,30 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">DCDate</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[DCShell Diff Temp]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCShell Diff Temp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCShell Diff Temp]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCShell Diff Temp]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[DCShell Diff Temp]</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1878,6 +1939,28 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shell Diff Temp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shell Diff Temp]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shell Diff Temp]"
+                      name="Shell Diff Temp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1983,6 +2066,12 @@
                       dataType="str"
                       length="50"
                       name="Area estimate of the heat exchanger" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shell Diff Temp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Shell Diff Temp" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2032,7 +2121,8 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[HXStagingTables] VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[HXStagingTables]
+ VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2060,12 +2150,6 @@
                       cachedName="HXId"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[HXId]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCDate]"
-                      cachedDataType="date"
-                      cachedName="DCDate"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCTemperature Tube Inlet (TT1)]"
                       cachedDataType="wstr"
@@ -2095,89 +2179,102 @@
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCTemperature Shell Outlet (TS2)]" />
                     <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCShell Diff Temp]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCShell Diff Temp"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCShell Diff Temp]" />
+                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCFlow Tube Inlet (FT1)]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCFlow Tube Inlet (FT1)"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCFlow Tube Inlet (FT1)]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCFlow Tube Outlet (FT2)]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCFlow Tube Outlet (FT2)"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCFlow Tube Outlet (FT2)]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCPressure Tube Inlet (PT1)]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCPressure Tube Inlet (PT1)"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCPressure Tube Inlet (PT1)]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCPressure Tube Outlet (PT2)]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCPressure Tube Outlet (PT2)"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCPressure Tube Outlet (PT2)]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCPressure Shell Inlet (PS1)]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCPressure Shell Inlet (PS1)"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCPressure Shell Inlet (PS1)]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCPressure Shell Outlet(PS2)]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCPressure Shell Outlet(PS2)"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCPressure Shell Outlet(PS2)]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCMass]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCMass"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCMass]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCSpecific heat]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCSpecific heat"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCSpecific heat]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCHeat Transfer Coefficient]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCHeat Transfer Coefficient"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCHeat Transfer Coefficient]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCHeat Energy]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCHeat Energy"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCHeat Energy]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCLMTD]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCLMTD"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCLMTD]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCArea estimate of the heat exchanger]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DCArea estimate of the heat exchanger"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCArea estimate of the heat exchanger]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCDate]"
+                      cachedDataType="date"
+                      cachedName="DCDate"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2380,6 +2477,17 @@
                           name="DBParamInfoFlags">193</property>
                       </properties>
                     </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      dataType="nText"
+                      name="Param_18">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2546,18 +2654,18 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="115,311" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Execute SQL Task"
           TopLeft="86,44" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="214.4,55.2"
-          Size="214.4,97.6"
+          PanelSize="214,55"
+          Size="214,98"
           Id="Package\Foreach Loop Container"
           TopLeft="63,137" />
         <EdgeLayout
@@ -2625,81 +2733,47 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="397.428576732168,281.529416161838" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="275,191.235294106922" />
-        <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="58,13" />
         <NodeLayout
-          Size="156,41.6"
+          Size="166,42"
+          Id="Package\Data Flow Task\OLE DB Command"
+          TopLeft="328,231" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="263,153.235294106922" />
+        <NodeLayout
+          Size="156,42"
           Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="173,98" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="251,140">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="101,51.235294106922"
-              Start="0,0"
-              End="101,43.735294106922">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.617647053461" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.617647053461"
-                    Point2="0,25.617647053461"
-                    Point3="4,25.617647053461" />
-                  <mssgle:LineSegment
-                    End="97,25.617647053461" />
-                  <mssgle:CubicBezierSegment
-                    Point1="97,25.617647053461"
-                    Point2="101,25.617647053461"
-                    Point3="101,29.617647053461" />
-                  <mssgle:LineSegment
-                    End="101,43.735294106922" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="167,82" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="133.5,55">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="117.5,43"
+              EndConnector="111.5,27"
               Start="0,0"
-              End="117.5,35.5">
+              End="111.5,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,9.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="4,13.5" />
                   <mssgle:LineSegment
-                    End="113.5,21.5" />
+                    End="107.5,13.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="113.5,21.5"
-                    Point2="117.5,21.5"
-                    Point3="117.5,25.5" />
+                    Point1="107.5,13.5"
+                    Point2="111.5,13.5"
+                    Point3="111.5,17.5" />
                   <mssgle:LineSegment
-                    End="117.5,35.5" />
+                    End="111.5,19.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2710,30 +2784,64 @@ ON (F.Id=HX.FailureModeId)"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="352,233.235294106922">
+          TopLeft="340,195.235294106922">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="128.428576732168,48.294122054916"
+              EndConnector="71,35.764705893078"
               Start="0,0"
-              End="128.428576732168,40.794122054916">
+              End="71,28.264705893078">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.147061027458" />
+                    End="0,13.882352946539" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.147061027458"
-                    Point2="0,24.147061027458"
-                    Point3="4,24.147061027458" />
+                    Point1="0,13.882352946539"
+                    Point2="0,17.882352946539"
+                    Point3="4,17.882352946539" />
                   <mssgle:LineSegment
-                    End="124.428576732168,24.147061027458" />
+                    End="67,17.882352946539" />
                   <mssgle:CubicBezierSegment
-                    Point1="124.428576732168,24.147061027458"
-                    Point2="128.428576732168,24.147061027458"
-                    Point3="128.428576732168,28.147061027458" />
+                    Point1="67,17.882352946539"
+                    Point2="71,17.882352946539"
+                    Point3="71,21.882352946539" />
                   <mssgle:LineSegment
-                    End="128.428576732168,40.794122054916" />
+                    End="71,28.264705893078" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="245,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95,29.235294106922"
+              Start="0,0"
+              End="95,21.735294106922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.617647053461" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.617647053461"
+                    Point2="0,14.617647053461"
+                    Point3="4,14.617647053461" />
+                  <mssgle:LineSegment
+                    End="91,14.617647053461" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91,14.617647053461"
+                    Point2="95,14.617647053461"
+                    Point3="95,18.617647053461" />
+                  <mssgle:LineSegment
+                    End="95,21.735294106922" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

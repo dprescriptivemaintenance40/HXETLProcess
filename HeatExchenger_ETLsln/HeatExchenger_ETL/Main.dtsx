@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-6EBQLBP\bistd"
   DTS:DTSID="{5DF04C14-2D0F-45E8-B95A-9098FF7CCA51}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{426F2ED1-9EF7-4A35-A95F-40D20E4D92AE}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{92189832-5064-4EA2-BBC8-92C6AAA85A7C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,6 @@
       DTS:refId="Package\PredictionTask"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{C0F2F16B-15FF-4016-9895-64BCD72FAE37}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -75,6 +74,7 @@
       DTS:refId="Package\ValidationTask"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{255F38BD-09D5-4F4B-A74C-13A922925EFD}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -128,19 +128,19 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147,42"
           Id="Package\PredictionTask"
           TopLeft="188,322" />
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\ProcessingTask"
           TopLeft="190,218" />
         <NodeLayout
-          Size="134.4,41.6"
+          Size="134,42"
           Id="Package\UploadTask"
           TopLeft="197.7142856413,45.7058826854072" />
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147,42"
           Id="Package\ValidationTask"
           TopLeft="192,132" />
         <EdgeLayout
