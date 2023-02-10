@@ -16,6 +16,8 @@ cursor = conn.cursor()
 # AssetName="CentrifugalCompressor"
 #batchId=int(sys.argv[1])
 batchId=1
+incipient=0
+degrade=0
 query='''SELECT * FROM HXProcessedTables WHERE HXId={}'''
 series = pd.read_sql(query.format(batchId),conn, parse_dates=['Date'])
 startdate=min(series["Date"])
@@ -63,7 +65,7 @@ for col in series.columns:
                 bigdata[col]=finalDf[col+"New"]
 for i, row in bigdata.iterrows():
    
-      if pd.isnull(row['TT1']) and pd.isnull(row['TT2']) and pd.isnull(row['TS1']) and pd.isnull(row['TS2']) and pd.isnull(row['ShellDiffTemp'])and pd.isnull(row['FT1']) and pd.isnull(row['FT2']) and pd.isnull(row['PT1']) and pd.isnull(row['PT2']) and pd.isnull(row['PS1']) and pd.isnull(row['PS2']) and pd.isnull(row['Mass']) and pd.isnull(row['SpecificHeat']) and pd.isnull(row['HTC']) and pd.isnull(row['HeatEnergy']) and pd.isnull(row['LMTD']) and pd.isnull(row['Area']) :
+      if pd.isnull(row['TT1']) and pd.isnull(row['TT2']) and pd.isnull(row['TS1']) and pd.isnull(row['TS2']) and pd.isnull(row['ShellDiffTemp']) and pd.isnull(row['FT1']) and pd.isnull(row['FT2']) and pd.isnull(row['PT1']) and pd.isnull(row['PT2']) and pd.isnull(row['PS1']) and pd.isnull(row['PS2']) and pd.isnull(row['Mass']) and pd.isnull(row['SpecificHeat']) and pd.isnull(row['HTC']) and pd.isnull(row['HeatEnergy']) and pd.isnull(row['LMTD']) and pd.isnull(row['Area']) and pd.isnull(row['Incipient']) and pd.isnull(row['Degrade']):
          row['TT1']=0
          row['TT2']=0
          row['TS1']=0
@@ -81,7 +83,24 @@ for i, row in bigdata.iterrows():
          row['HeatEnergy']=0
          row['LMTD']=0
          row['Area']=0
-      SQLCommand = "INSERT INTO HXPredictedTables(HXId,Date,TT1,TT2,TS1,TS2,ShellDiffTemp,FT1,FT2,PT1,PT2,PS1,PS2,Mass,SpecificHeat,HTC,HeatEnergy,LMTD,Area) VALUES('" + str(batchId) + "','" + str(i) + "','" + str(row['TT1']) + "','" + str(row['TT2']) + "','" + str(row['TS1']) + "','" + str(row['TS2']) + "','" + str(row['ShellDiffTemp']) + "','" + str(row['FT1']) + "','" + str(row['FT2']) + "','" + str(row['PT1']) + "','" + str(row['PT2']) + "','" + str(row['PS1']) + "','" + str(row['PS2']) + "','" + str(row['Mass']) + "','" + str(row['SpecificHeat']) + "','" + str(row['HTC']) + "','" + str(row['HeatEnergy']) + "','" + str(row['LMTD']) + "','" + str(row['Area']) + "')"
+         row['Incipient']=0
+         row['Degrade']=0
+      
+      if(row['Incipient']>=1.0):
+         incipient=1
+      elif(row['Incipient']<=-1.0):
+         incipient=1
+      else:
+         incipient=0
+
+      
+      if(row['Degrade']>=1.0):
+         degrade=1
+      elif(row['Degrade']<=-1.0):
+         degrade=1
+      else:
+         degrade=0
+      SQLCommand = "INSERT INTO HXPredictedTables(HXId,Date,TT1,TT2,TS1,TS2,ShellDiffTemp,FT1,FT2,PT1,PT2,PS1,PS2,Mass,SpecificHeat,HTC,HeatEnergy,LMTD,Area,Incipient,Degrade) VALUES('" + str(batchId) + "','" + str(i) + "','" + str(row['TT1']) + "','" + str(row['TT2']) + "','" + str(row['TS1']) + "','" + str(row['TS2']) + "','" + str(row['ShellDiffTemp']) + "','" + str(row['FT1']) + "','" + str(row['FT2']) + "','" + str(row['PT1']) + "','" + str(row['PT2']) + "','" + str(row['PS1']) + "','" + str(row['PS2']) + "','" + str(row['Mass']) + "','" + str(row['SpecificHeat']) + "','" + str(row['HTC']) + "','" + str(row['HeatEnergy']) + "','" + str(row['LMTD']) + "','" + str(row['Area']) + "','" + str(incipient) + "','" + str(degrade) + "')"
       cursor.execute(SQLCommand)
 conn.commit()
 
